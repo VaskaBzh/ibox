@@ -8,14 +8,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/VaskaBzh/Autotrading.git"
+    "url": "git+https://github.com/VaskaBzh/ibox.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/VaskaBzh/Autotrading/issues"
+    "url": "https://github.com/VaskaBzh/ibox/issues"
   },
-  "homepage": "https://github.com/VaskaBzh/Autotrading#readme",
+  "homepage": "https://github.com/VaskaBzh/ibox#readme",
   "dependencies": {
     "browser-sync": "^2.27.7",
     "browserify": "^17.0.0",
