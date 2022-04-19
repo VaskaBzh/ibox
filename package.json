@@ -1,0 +1,39 @@
+{
+  "name": "ibox",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/VaskaBzh/Autotrading.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/VaskaBzh/Autotrading/issues"
+  },
+  "homepage": "https://github.com/VaskaBzh/Autotrading#readme",
+  "dependencies": {
+    "browser-sync": "^2.27.7",
+    "browserify": "^17.0.0",
+    "download": "^8.0.0",
+    "gulp": "^4.0.2",
+    "gulp-clean-css": "^4.3.0",
+    "gulp-html-minify": "^0.0.14",
+    "gulp-js-minify": "^0.0.3",
+    "gulp-tinypng-compress": "^1.2.5",
+    "gulp-uglify": "^3.0.2",
+    "gulplog": "^1.0.0",
+    "reactify": "^1.1.1",
+    "vinyl-buffer": "^1.0.1",
+    "vinyl-source-stream": "^2.0.0"
+  },
+  "devDependencies": {
+    "gulp-autoprefixer": "^8.0.0",
+    "gulp-sass": "^5.1.0",
+    "sass": "^1.49.8"
+  }
+}
