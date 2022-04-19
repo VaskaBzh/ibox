@@ -4,12 +4,54 @@
     padding: 0
 h1
     margin: 0
-html
-    font-size: 14px 
 body
-    font-family: 'Roboto', sans-serif
-    font-size: 1rem
-    color: $black
+    font-family: 'Ubuntu'
+    font-size: 16px
+    color: $dark
     outline: none
+    font-weight: 400
+    overflow-x: hidden
 img
     max-width: 100% 
+a
+    text-decoration: none
+    color: $dark
+.section
+    padding-top: 66px
+    &__link
+        padding-bottom: 6px
+        border-bottom: 1px solid $link
+        color: $link
+        border-bottom-style: dotted
+    &__block
+        min-height: 572px
+        width: 100%
+        background-color: $light
+        border-radius: 16px
+        padding: 30px 32px 33px 35px
+    &__text
+        line-height: 122%
+        text-align: center
+        color: $lightGrey
+.logo
+    max-width: 203px
+    width: 100%
+    padding-bottom: 23px
+.messengers
+    max-width: 225px
+    width: 100%
+    align-items: flex-end
+    &__elem
+        width: 25px
+        height: 25px
+        &:nth-child(1)
+            width: 27px
+        &:nth-child(2)
+            width: 33px
+            margin-bottom: -4px
+        &:nth-child(3)
+            width: 30px
+            margin-right: -3px
+        &:nth-child(4)
+            width: 24px
+            margin-right: -3px

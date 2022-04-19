@@ -1,10 +1,18 @@
 @font-face {
-    font-family: 'Myriad Pro';
+    font-family: 'Ubuntu';
     src:
-    url('../fonts/MyriadPro-Regular.woff') format('woff'),
-    url('../fonts/MyriadPro-Regular.woff2') format('woff2'),
-    url('../fonts/MyriadPro-Regular.ttf') format('truetype');
+    url('../fonts/Ubuntu-Regular.woff') format('woff'),
+    url('../fonts/Ubuntu-Regular.woff2') format('woff2');
     font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+    }
+@font-face {
+    font-family: 'Ubuntu';
+    src:
+    url('../fonts/Ubuntu-Medium.woff') format('woff'),
+    url('../fonts/Ubuntu-Medium.woff2') format('woff2');
+    font-weight: 500;
     font-style: normal;
     font-display: swap;
     }

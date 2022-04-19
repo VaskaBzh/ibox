@@ -1,0 +1,76 @@
+.button
+    max-width: 359px
+    width: 100%
+    padding: 16px 0 17px
+    color: $light
+    cursor: pointer
+    border: none
+    outline: none
+    border-radius: 8px
+    &_primary
+        background: $link
+    &_secondary 
+        background: transparent
+        padding: 15px 0
+        border: 1px solid $light
+.form
+    width: 100%
+    &__item
+        &_password
+            position: relative
+    &__title
+        margin-bottom: 18px
+        font-weight: 500
+        font-size: 21px
+        color: $link
+        padding-left: 2px
+    &__button
+        margin-top: 36px
+.input
+    width: 100%
+    padding: 15px 0 16px 17px
+    border: 1px solid $lightGrey
+    border-radius: 8px
+    outline: none
+    line-height: 100%
+    margin-bottom: 16px
+    &:placeholder
+        color: $lightGrey
+    &_password
+        &+label
+            position: absolute
+            right: 14px
+            top: 50%
+            width: 22px
+            height: 14px
+            margin-top: -16px
+            background-repeat: no-repeat 
+            background-position: center
+    &_checkbox
+        opacity: 0
+        z-index: -1
+        position: absolute
+        width: 1%
+        &+label
+            display: inline-flex
+            align-items: center
+            user-select: none
+            display: inline-flex
+            align-items: center
+            &::before
+                content: ''
+                display: inline-block
+                width: 32px
+                height: 32px
+                border-radius: 8px
+                background-color: transparent
+                background-image: none
+                border: 1px solid $lightGrey
+                margin-right: 9px
+                background-repeat: no-repeat
+                background-position:  center
+        &:checked
+            &+label
+                &::before
+                    background-image: url(../img/tick.svg)
+                    

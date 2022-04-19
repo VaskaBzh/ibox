@@ -5,36 +5,37 @@ const browserSync = require('browser-sync').create();
 const sass = require('gulp-sass')(require('sass'));
 const autoprefixer = require('gulp-autoprefixer');
 const cleanCSS = require('gulp-clean-css');
-const minifyjs = require('gulp-js-minify');
+// const minifyjs = require('gulp-js-minify');
 const htmlmin = require('gulp-html-minify');
 const tinypng = require('gulp-tinypng-compress');
 const browserify = require('browserify');
 const source = require('vinyl-source-stream');
-const buffer = require('vinyl-buffer');
-const log = require('gulplog');
+const streamify = require('gulp-streamify');
+const rename = require('gulp-rename');
 const uglify = require('gulp-uglify');
-const reactify = require('reactify');
 
-function javascript() {
-  // set up the browserify instance on a task basis
-  const b = browserify({
-    entries: './entry.js',
-    debug: true,
-    // defining transforms here will avoid crashing your stream
-    transform: [reactify]
-  });
-
-  return b.bundle()
-    .pipe(source('app.js', { sourcemaps: true }))
-    .pipe(buffer())
-        // Add transformation tasks to the pipeline here.
-        .pipe(uglify())
-        .on('error', log.error)
-    .pipe(dest('./dist/js/', { sourcemaps: '../sourcemaps/' }));
-};
+// using vinyl-source-stream:
+function javaScript() {
+    const bundleStreamEnter = browserify('./src/enter.js').bundle()
+    const bundleStreamReg = browserify('./src/reg.js').bundle()
+   
+    bundleStreamEnter
+      .pipe(source('enter.js'))
+      .pipe(streamify(uglify()))
+      .pipe(rename('bundleEnter.js'))
+      .pipe(dest('./dist/'))
+      .pipe(browserSync.stream());
+    bundleStreamReg
+      .pipe(source('enter.js'))
+      .pipe(streamify(uglify()))
+      .pipe(rename('bundleReg.js'))
+      .pipe(dest('./dist/'))
+      .pipe(browserSync.stream());
+}
 
 // Static server
 function bs() {
+    javaScript();
     serveSass();
     browserSync.init({
         server: {
@@ -45,7 +46,9 @@ function bs() {
     watch("./sass/**/*.sass", serveSass);
     watch("./sass**/*.sass").on('change', browserSync.reload);
     watch("./sass/**/*.scss", serveSass);
-    watch("./js/*.js").on('change', browserSync.reload);
+    watch("./src/modules/*.js").on('change', browserSync.reload);
+    watch("./src/index.js").on('change', browserSync.reload);
+    watch("./src/modules/*.js", javaScript)
 };
 
 function serveSass() {
@@ -65,13 +68,13 @@ function buildCSS(done) {
     done();
 }
 
-function buildJS(done) {
-    src(['js/**.js', '!js/**.min.js'])
-        .pipe(minifyjs())
-        .pipe(dest('dist/js/'));
-    src('js/**.min.js').pipe(dest('dist/js/'));
-    done();
-}
+// function buildJS(done) {
+//     src(['js/**.js', '!js/**.min.js'])
+//         .pipe(minifyjs())
+//         .pipe(dest('dist/js/'));
+//     src('js/**.min.js').pipe(dest('dist/js/'));
+//     done();
+// }
 
 function html(done) {
     src('**.html')
@@ -103,6 +106,5 @@ function imagemin(done) {
     done();
 };
 
-exports.js = javascript;
 exports.serve = bs;
-exports.build = series(buildCSS, buildJS, html, php, fonts, imagemin);
+exports.build = series(buildCSS, html, php, fonts, imagemin);
