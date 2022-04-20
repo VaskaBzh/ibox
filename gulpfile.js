@@ -18,6 +18,7 @@ const uglify = require('gulp-uglify');
 function javaScript() {
     const bundleStreamEnter = browserify('./src/enter.js').bundle()
     const bundleStreamReg = browserify('./src/reg.js').bundle()
+    const bundleStreamTrack = browserify('./src/tracking.js').bundle()
    
     bundleStreamEnter
       .pipe(source('enter.js'))
@@ -26,9 +27,15 @@ function javaScript() {
       .pipe(dest('./dist/'))
       .pipe(browserSync.stream());
     bundleStreamReg
-      .pipe(source('enter.js'))
+      .pipe(source('reg.js'))
       .pipe(streamify(uglify()))
       .pipe(rename('bundleReg.js'))
+      .pipe(dest('./dist/'))
+      .pipe(browserSync.stream());
+    bundleStreamTrack
+      .pipe(source('tracking.js'))
+      .pipe(streamify(uglify()))
+      .pipe(rename('bundleTrack.js'))
       .pipe(dest('./dist/'))
       .pipe(browserSync.stream());
 }
