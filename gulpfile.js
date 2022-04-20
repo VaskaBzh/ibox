@@ -54,8 +54,9 @@ function bs() {
     watch("./sass**/*.sass").on('change', browserSync.reload);
     watch("./sass/**/*.scss", serveSass);
     watch("./src/modules/*.js").on('change', browserSync.reload);
-    watch("./src/index.js").on('change', browserSync.reload);
-    watch("./src/modules/*.js", javaScript)
+    watch("./src/modules/*.js", javaScript);
+    watch("./src/*.js").on('change', browserSync.reload);
+    watch("./src/*.js", javaScript);
 };
 
 function serveSass() {
