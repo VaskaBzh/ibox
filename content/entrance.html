@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="../dist/bundleEnter.js" type="text/javascript" defer></script>
+    <title>IBox</title>
+</head>
+<body>
+    <section class="entrance section">
+        <div class="container">
+            <div class="logo row">
+                <img src="../img/logo.svg" alt="IBOX" class="logo__img">
+                <img src="../img/motive.svg" alt="Tracking" class="logo__img">
+            </div>
+            <div class="entry section__block">
+                <a href="./content/registration.html" class="entry__link_reg entry__link section__link">Зарегистрироваться</a> 
+                <form id="form" action="#" class="form entry__form section__form">
+                    <h3 class="form__title">Вход</h3>
+                    <input id="email" type="email" class="input form__input _req" placeholder="Ваш e-mail">
+                    <div id="item-password" class="form__item form__item_password">
+                        <input id="password" type="password" class="input form__input input_password _req" placeholder="Пароль">
+                        <label for="password"></label>
+                    </div>
+                    <div class="form__item">
+                        <input id="checkbox" type="checkbox" class="input form__input input_checkbox _req">
+                        <label for="checkbox">Запомнить данные</label>
+                    </div>
+                    <button class="button button_primary form__button">Войти</button>
+                </form>
+                <div class="entry__links">
+                    <a href="#" class="entry__link_password entry__link section__link">Восстановить пароль</a> 
+                    <p class="entry__link entry__link_agree">Выполняя вход, я соглашаюсь с <a href="#" class="entry__link section__link">пользовательским соглашением</a></p>
+                </div>
+                <span class="entry__demo"><a href="./content/tracking.html" class="entry__demo_link">Демо-режим</a></span>
+            </div>
+            <button class="button button_secondary entrance__button">Выберите устройство</button>
+            <p class="section__text entrance__text">Индивидуальный подбор радар-детекторов, видеорегистраторов и комбо-устройств для вашего автомобиля в интернет-магазине iboxstore</p>
+            <div class="messengers row">
+                <a href="#" class="messengers__elem"><img src="../img/instagram.svg" alt="instagram"></a>
+                <a href="#" class="messengers__elem"><img src="../img/wk.svg" alt="wk"></a>
+                <a href="#" class="messengers__elem"><img src="../img/telegram.svg" alt="telegram"></a>
+                <a href="#" class="messengers__elem"><img src="../img/youtube.svg" alt="youtube"></a>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

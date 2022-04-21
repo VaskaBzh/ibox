@@ -1,5 +1,5 @@
 const validateReg = require('./modules/validateReg')
-const passwordToggleReg = require('./modules/passwordReg')
+const passwordToggle = require('./modules/password')
 
 validateReg()
-passwordToggleReg()
+passwordToggle()

@@ -666,3 +666,19 @@ a {
 .registration__elem {
   margin-right: 4px !important;
 }
+
+#missingCredential {
+  display: none;
+}
+
+.div {
+  float: left;
+  width: 100%;
+  height: 100vh;
+}
+
+#mapDiv {
+  float: left;
+  width: 100%;
+  height: 100%;
+}

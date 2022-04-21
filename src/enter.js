@@ -1,5 +1,5 @@
 const validateEnter = require('./modules/validateEnter')
-const passwordToggleEnter = require('./modules/passwordEnter')
+const passwordToggle = require('./modules/password')
 
 validateEnter()
-passwordToggleEnter()
+passwordToggle()
