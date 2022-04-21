@@ -1,5 +1,7 @@
-// const mapInit = require('./modules/mapInit')
-// const mapGet = require('./modules/mapGet')
+const modalToggle = require('./modules/modalToggle')
+const newModalToggle = require('./modules/newModalToggle')
+const sureModalToggle = require('./modules/sureModalToggle')
 
-// mapInit()
-// mapGet()
+modalToggle()
+newModalToggle()
+sureModalToggle()

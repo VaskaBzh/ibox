@@ -7,14 +7,51 @@
     <link rel="stylesheet" href="../css/style.css">
     <script type='text/javascript' src='https://www.bing.com/api/maps/mapcontrol?callback=GetMap' async defer></script>
     <script src="../dist/bundleTrack.js" type="text/javascript" defer></script>
-    <script src="../src/modules/mapGet.js"></script>
+    <script src="../src/modules/mapInit.js" defer></script>
     <title>IBox</title>
 </head>
 <body>
     <section class="tracking">
-      <div class="div">
+      <div class="div"></div>
       <div id='mapDiv'></div>
-      <br style="clear: left;" />
+      <br style="clear: left;"/>
+
+      <a id="back-to-entrance" href="entrance.html"></a>
+
+      <div class="modal">
+        <div class="modal__block">
+          <span class="modal__nothing">Устройства не подключены. Добавьте устройства </span>
+          <button id="new" class="button button__secondary modal__button"><img src="../img/plus.svg" alt="plus"> Добавить устройство</button>
+        </div>
+        <button id="sure" class="button button__secondary modal__button">Выйти из личного кабинета</button>
+      </div>
+      
+      <div class="tracking__button"><img src="../img/white-arrow.svg" alt="toggle-arrow" style="transform: rotate(180deg);"></div>
     </section>
+
+    <div class="sure window">
+      <span class="sure__question window__head">Вы уверены, что хотите покинуть личный кабинет?</span>
+      <div class="sure__buttons">
+        <button id="to-entrance" class="button button_primary sure__button window__button">Да</button>
+        <button id="close" class="button button_primary sure__button window__button">Нет</button>
+      </div>
+    </div>
+  <div class="shadow">
+    <div class="new window">
+      <img src="../img/cross.svg" alt="close" class="window__cross new__cross">
+      <span class="new__question window__head">Добавить устройство</span>
+      <form action="#" class="form window__form new__form">
+        <div class="form__item new__chose">
+          <input id="list" type="text" class="input new__input window__input new__input_chose" placeholder="Выберите Ваше устройство">
+          <label for="list"><img src="../img/grey-arrow.svg" alt="open/close"></label>
+        </div>
+        <div class="form__item new__IMEI">
+          <input id="IMEI" type="text" class="input new__input window__input" placeholder="IMEI нового устройства/">
+          <label for="IMEI">?</label>
+        </div>
+        <button class="button button_primary new__button window__button form__button">Добавить</button>
+      </form>
+    </div>
+  </div>
 </body>
 </html>

@@ -55,3 +55,119 @@ a
         &:nth-child(4)
             width: 24px
             margin-right: -3px
+.modal
+    padding: 87px 38px 35px 43px
+    display: flex
+    flex-direction: column
+    align-items: center
+    justify-content: space-between
+    height: 100vh
+    max-width: 465px
+    width: 100%
+    background-color: $light
+    margin-top: 0
+    transform: translateX(-465px)
+    transition-duration: 400ms
+    &__nothing
+        line-height: 120%
+        margin-bottom: 35px
+        font-size: 16px
+        color: $link
+    &__button
+        color: $link
+        img
+            margin-bottom: -7px
+            width: 22px
+            height: 22px
+    &__block
+        min-height: 131px
+        display: flex
+        flex-direction: column
+        align-items: center
+.shadow
+    width: 100%
+    height: 100vh
+    z-index: 3
+    background: rgba($dark, 0.7)
+    display: none
+    opacity: 0
+    overflow: hidden
+    position: absolute
+    left: 0
+    top: 0
+.window
+    background-color: $light
+    border-radius: 16px
+    position: absolute
+    left: 50%
+    top: 50%
+    box-shadow: 0px 9px 43px rgba($dark, 0.25)
+    display: none
+    flex-direction: column
+    justify-content: space-between
+    opacity: 0
+    overflow: hidden
+    &__cross
+        position: absolute
+    &__head
+        color: $link
+        font-size: 21px
+        font-weight: 500
+    &__button
+        max-width: 100%
+.sure
+    max-width: 649px
+    width: 100%
+    min-height: 189px
+    margin-left: -325px
+    margin-top: -95px
+    padding: 46px 56px 39px 50px
+    &__buttons
+        width: 100%
+        display: flex
+        justify-content: space-between
+    &__button
+        max-width: 255px
+.new
+    max-width: 426px
+    width: 100%
+    min-height: 386px
+    margin-top: -193px
+    margin-left: -213px
+    opacity: 1
+    overflow: visible
+    display: flex
+    padding: 50px 33px 42px
+    &__cross
+        top: 6%
+        left: 92%
+    &__chose
+        position: relative
+        label
+            position: absolute
+            min-height: 9px
+            max-width: 18px
+            width: 100%
+            right: 10px
+            top: 28%
+            cursor: pointer
+    &__IMEI
+        position: relative
+        label
+            position: absolute
+            min-height: 22px
+            max-width: 22px
+            width: 100%
+            right: 10px
+            top: 23%
+            cursor: pointer
+            border-radius: 100%
+            background-color: $lightGrey
+            color: $light
+            display: flex
+            align-items: center
+            justify-content: center
+.active
+    opacity: 1
+    overflow: visible
+    display: flex

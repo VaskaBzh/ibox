@@ -4,7 +4,35 @@
     float: left
     width: 100% 
     height: 100vh
+    position: absolute
+    top: 0
+    left: 0
+    z-index: 0
 #mapDiv
     float: left
     width: 100%
     height: 100%
+    position: absolute
+    top: 0
+    left: 0
+    z-index: 0
+.tracking
+    display: flex
+    flex-direction: row
+    align-items: flex-start
+    &__button
+        max-width: 52px
+        width: 100%
+        min-height: 52px
+        background: $link
+        border-radius: 8px
+        display: flex
+        align-items: center
+        justify-content: center
+        margin-left: 20px
+        margin-top: 85px
+        transform: translateX(-465px)
+        transition-duration: 400ms
+        img
+            transform: rotate(180deg)
+            transition-duration: 400ms
