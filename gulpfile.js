@@ -19,6 +19,8 @@ function javaScript() {
     const bundleStreamEnter = browserify('./src/enter.js').bundle()
     const bundleStreamReg = browserify('./src/reg.js').bundle()
     const bundleStreamTrack = browserify('./src/tracking.js').bundle()
+    const bundleStreamTrackWith = browserify('./src/trackingWith.js').bundle()
+
    
     bundleStreamEnter
       .pipe(source('enter.js'))
@@ -36,6 +38,12 @@ function javaScript() {
       .pipe(source('tracking.js'))
       .pipe(streamify(uglify()))
       .pipe(rename('bundleTrack.js'))
+      .pipe(dest('./dist/'))
+      .pipe(browserSync.stream());
+    bundleStreamTrackWith
+      .pipe(source('trackingWith.js'))
+      .pipe(streamify(uglify()))
+      .pipe(rename('bundleTrackWith.js'))
       .pipe(dest('./dist/'))
       .pipe(browserSync.stream());
 }

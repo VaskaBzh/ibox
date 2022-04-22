@@ -36,3 +36,82 @@
         img
             transform: rotate(180deg)
             transition-duration: 400ms
+.sure
+    max-width: 649px
+    width: 100%
+    min-height: 189px
+    margin-left: -325px
+    margin-top: -95px
+    padding: 46px 56px 39px 50px
+    &__buttons
+        width: 100%
+        display: flex
+        justify-content: space-between
+    &__button
+        max-width: 255px
+.new
+    max-width: 426px
+    width: 100%
+    min-height: 386px
+    margin-top: -193px
+    margin-left: -213px
+    opacity: 1
+    overflow: visible
+    display: flex
+    padding: 50px 33px 42px
+    &__input
+        &_chose
+            z-index: 23
+    &__cross
+        top: 6%
+        left: 92%
+    &__chose
+        position: relative
+        label
+            position: absolute
+            min-height: 9px
+            max-width: 18px
+            width: 100%
+            right: 10px
+            top: 28%
+            cursor: pointer
+            transition-duration: 400ms
+    &__IMEI
+        position: relative
+        label
+            position: absolute
+            min-height: 22px
+            max-width: 22px
+            width: 100%
+            right: 10px
+            top: 23%
+            cursor: pointer
+            border-radius: 100%
+            background-color: $lightGrey
+            color: $light
+            display: flex
+            align-items: center
+            justify-content: center
+    &__list
+        padding: 0 22px 0 18px
+        background: $light
+        position: absolute
+        display: none
+        overflow: hidden
+        opacity: 0
+        flex-direction: column
+        justify-content: space-between
+        z-index: 22
+        width: 100%
+        border: 1px solid $lightGrey
+        border-top: none
+        border-radius: 0 0 8px 8px
+        top: 70%
+        left: 0
+        &__elem
+            border-top: 1px solid $borderLight
+            padding: 17px 0 19px
+            color: $link
+            cursor: pointer
+            &_border
+                border-top: none

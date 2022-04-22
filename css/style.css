@@ -559,6 +559,7 @@ a {
 }
 
 .modal {
+  position: relative;
   padding: 87px 38px 35px 43px;
   display: flex;
   flex-direction: column;
@@ -572,6 +573,22 @@ a {
   transform: translateX(-465px);
   transition-duration: 400ms;
 }
+.modal__line {
+  background-color: #F4F4F4;
+  width: 100%;
+  left: 0;
+  top: 38%;
+  position: absolute;
+  height: 1px;
+}
+.modal__line_seconda {
+  top: 78%;
+}
+.modal__input {
+  min-height: 52px;
+  border: none;
+  background: #F4F4F4;
+}
 .modal__nothing {
   line-height: 120%;
   margin-bottom: 35px;
@@ -580,6 +597,8 @@ a {
 }
 .modal__button {
   color: #727883;
+  border: 1px solid #727883;
+  max-width: 100%;
 }
 .modal__button img {
   margin-bottom: -7px;
@@ -587,10 +606,42 @@ a {
   height: 22px;
 }
 .modal__block {
+  width: 100%;
   min-height: 131px;
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+.modal__new {
+  width: 100%;
+}
+.modal__new__head {
+  max-width: 263px;
+}
+.modal__new__title {
+  border: none;
+  outline: none;
+  width: 100%;
+  margin-bottom: 8px;
+  color: #727883;
+  line-height: 120%;
+}
+.modal__new__title::after {
+  content: url(../img/change.svg);
+  margin-left: 9px;
+}
+.modal__new__heading {
+  color: #C4C4C4;
+  line-height: 120%;
+  font-size: 12px;
+}
+.modal__new__block {
+  margin-bottom: 14px;
+  width: 100%;
+}
+.modal__new__button {
+  margin-bottom: 14px;
+  max-width: 100%;
 }
 
 .shadow {
@@ -631,73 +682,10 @@ a {
   max-width: 100%;
 }
 
-.sure {
-  max-width: 649px;
-  width: 100%;
-  min-height: 189px;
-  margin-left: -325px;
-  margin-top: -95px;
-  padding: 46px 56px 39px 50px;
-}
-.sure__buttons {
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-}
-.sure__button {
-  max-width: 255px;
-}
-
-.new {
-  max-width: 426px;
-  width: 100%;
-  min-height: 386px;
-  margin-top: -193px;
-  margin-left: -213px;
-  opacity: 1;
-  overflow: visible;
-  display: flex;
-  padding: 50px 33px 42px;
-}
-.new__cross {
-  top: 6%;
-  left: 92%;
-}
-.new__chose {
-  position: relative;
-}
-.new__chose label {
-  position: absolute;
-  min-height: 9px;
-  max-width: 18px;
-  width: 100%;
-  right: 10px;
-  top: 28%;
-  cursor: pointer;
-}
-.new__IMEI {
-  position: relative;
-}
-.new__IMEI label {
-  position: absolute;
-  min-height: 22px;
-  max-width: 22px;
-  width: 100%;
-  right: 10px;
-  top: 23%;
-  cursor: pointer;
-  border-radius: 100%;
-  background-color: #C4C4C4;
-  color: #fff;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
 .active {
-  opacity: 1;
-  overflow: visible;
-  display: flex;
+  opacity: 1 !important;
+  overflow: visible !important;
+  display: flex !important;
 }
 
 .entrance {
@@ -855,4 +843,97 @@ a {
 .tracking__button img {
   transform: rotate(180deg);
   transition-duration: 400ms;
+}
+
+.sure {
+  max-width: 649px;
+  width: 100%;
+  min-height: 189px;
+  margin-left: -325px;
+  margin-top: -95px;
+  padding: 46px 56px 39px 50px;
+}
+.sure__buttons {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.sure__button {
+  max-width: 255px;
+}
+
+.new {
+  max-width: 426px;
+  width: 100%;
+  min-height: 386px;
+  margin-top: -193px;
+  margin-left: -213px;
+  opacity: 1;
+  overflow: visible;
+  display: flex;
+  padding: 50px 33px 42px;
+}
+.new__input_chose {
+  z-index: 23;
+}
+.new__cross {
+  top: 6%;
+  left: 92%;
+}
+.new__chose {
+  position: relative;
+}
+.new__chose label {
+  position: absolute;
+  min-height: 9px;
+  max-width: 18px;
+  width: 100%;
+  right: 10px;
+  top: 28%;
+  cursor: pointer;
+  transition-duration: 400ms;
+}
+.new__IMEI {
+  position: relative;
+}
+.new__IMEI label {
+  position: absolute;
+  min-height: 22px;
+  max-width: 22px;
+  width: 100%;
+  right: 10px;
+  top: 23%;
+  cursor: pointer;
+  border-radius: 100%;
+  background-color: #C4C4C4;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.new__list {
+  padding: 0 22px 0 18px;
+  background: #fff;
+  position: absolute;
+  display: none;
+  overflow: hidden;
+  opacity: 0;
+  flex-direction: column;
+  justify-content: space-between;
+  z-index: 22;
+  width: 100%;
+  border: 1px solid #C4C4C4;
+  border-top: none;
+  border-radius: 0 0 8px 8px;
+  top: 70%;
+  left: 0;
+}
+.new__list__elem {
+  border-top: 1px solid #F4F4F4;
+  padding: 17px 0 19px;
+  color: #727883;
+  cursor: pointer;
+}
+.new__list__elem_border {
+  border-top: none;
 }
