@@ -20,9 +20,9 @@ a
     padding-top: 66px
     &__link
         padding-bottom: 6px
-        border-bottom: 1px solid $link
+        border-bottom: 1px dashed $link
         color: $link
-        border-bottom-style: dotted
+        cursor: pointer
     &__block
         min-height: 572px
         width: 100%
@@ -57,7 +57,7 @@ a
             margin-right: -3px
 .modal
     position: relative
-    padding: 87px 38px 35px 43px
+    padding: 99px 38px 35px 43px
     display: flex
     flex-direction: column
     align-items: center
@@ -69,62 +69,105 @@ a
     margin-top: 0
     transform: translateX(-465px)
     transition-duration: 400ms
-    &__line
-        background-color: $borderLight
-        width: 100%
-        left: 0
-        top: 38%
-        position: absolute
-        height: 1px
-        &_seconda
-            top: 78%
+    &__delete
+        font-size: 12px
+        color: $lightGrey
+        border-bottom: 1px dashed $lightGrey
+        padding: 2px
+        margin-top: -3px
     &__input
         min-height: 52px
         border: none
         background: $borderLight
+        margin-bottom: 44px
+        max-width: 100%
     &__nothing
         line-height: 120%
-        margin-bottom: 35px
+        margin-bottom: 47px
         font-size: 16px
         color: $link
     &__button
         color: $link
         border: 1px solid $link
-        max-width: 100%
+        max-width: 380px
+        padding: 16px 0
         img
             margin-bottom: -7px
             width: 22px
             height: 22px
+            margin-left: 10px
     &__block
         width: 100%
         min-height: 131px
         display: flex
         flex-direction: column
         align-items: center
+        &_item
+            position: relative
+            max-width: 380px
+            width: 100%
     &__new
         width: 100%
+        padding: 30px 42px 16px 43px
+        border-top: 4px solid $borderLight
+        border-bottom: 4px solid $borderLight
+        margin-bottom: 38px
+        display: flex
+        flex-direction: column
+        align-items: center
         &__head
-            max-width: 263px
+            max-width: 280px
+            width: 100%
+            display: flex
+            flex-direction: column
+            align-items: flex-start
+            &_block
+                width: 100%
+                display: flex
+                justify-content: space-between
+                align-items: center
         &__title
             border: none
             outline: none
             width: 100%
-            margin-bottom: 8px
+            margin-bottom: 4px
             color: $link
             line-height: 120%
-            &::after
-                content: url(../img/change.svg)
-                margin-left: 9px
+            border-bottom: 1px solid $lightGrey
+            &:disabled
+                background: transparent
+                border: none
+            &_change
+                margin-right: 18px
+            &_using
+                background: transparent
+                margin-bottom: 6px
+                width: 18px
+                height: 16px
+            &_close
+                display: none
+                width: 14px
+                height: 14px
+                margin-bottom: 14px
+            &_acsess
+                display: none
+                width: 21px
+                height: 14px
+                margin-bottom: 13px
+                margin-right: 4px
         &__heading
             color: $lightGrey
             line-height: 120%
             font-size: 12px
         &__block
-            margin-bottom: 14px
+            margin-bottom: 16px
             width: 100%
+            padding-left: 5px
         &__button
             margin-bottom: 14px
             max-width: 100%
+    &_with
+        padding: 81px 0 35px
 .shadow
     width: 100%
     height: 100vh
@@ -133,15 +176,16 @@ a
     display: none
     opacity: 0
     overflow: hidden
-    position: absolute
+    position: fixed
     left: 0
     top: 0
 .window
     background-color: $light
     border-radius: 16px
-    position: absolute
+    position: fixed
     left: 50%
     top: 50%
+    transform: translate(-50%, -50%)
     box-shadow: 0px 9px 43px rgba($dark, 0.25)
     display: none
     flex-direction: column
@@ -150,13 +194,127 @@ a
     overflow: hidden
     &__cross
         position: absolute
+        cursor: pointer
     &__head
         color: $link
         font-size: 21px
         font-weight: 500
     &__button
         max-width: 100%
+.calendar
+    z-index: -1
+    top: 8.3%
+    left: 2.3%
+    transform: translate(0, -50%)
+    padding: 24px 20px 20px 19px
+    display: flex
+    flex-direction: column
+    align-items: flex-start
+    overflow: scroll
+    max-width: 380px
+    border-radius: 8px
+    width: 100%
+    transition: 400ms all
+    &__button
+        padding: 14px 0
+    &__cross
+        top: 7.5%
+        right: 6.5%
+    &__block
+        max-width: 186px
+        width: 100%
+        margin-bottom: 22px
+        display: flex
+        justify-content: space-between
+    &__link
+        background: $lightGrey
+        color: $link
+        border-radius: 8px
+        &_yesterday
+            padding: 6px 18px 5px 15px
+        &_today
+            padding: 7px 15px 8px
+    &__nav
+        width: 100%
+        display: flex
+        justify-content: space-between
+        margin-bottom: 7px
+        &__button
+            max-width: 31px 
+            width: 100%
+            min-height: 31px
+            background: transparent
+            border-radius: 8px
+            border: 1px solid $link
+            display: flex
+            justify-content: center
+            align-items: center
+    &__value
+        max-width: 110px
+        display: flex
+        align-items: center
+        justify-content: center
+        width: 100%
+        &__elem
+            color: $link
+            &_mounth
+                margin-right: 2px
 .active
     opacity: 1!important
     overflow: visible!important
     display: flex!important
+    z-index: 99!important
+    &_calendar
+        transform: translateY(0)
+.delete
+    padding: 16px 56px 39px 60px
+    max-width: 649px
+    display: flex
+    align-items: center
+    flex-direction: column
+    justify-content: flex-start
+    &__question
+        font-weight: 500
+        color: $link
+        margin-bottom: 31px
+        line-height: 120%
+        font-size: 21px
+        text-align: left
+    &__button
+        max-width: 255px
+    &__block
+        width: 100%
+        display: flex
+        justify-content: space-between
+.get
+    padding: 61px 34px 35px 33px
+    max-width: 426px
+    &__cross
+        right: 3%
+        top: 3%
+    &__form
+        margin-top: 18px
+    &__input
+        margin-bottom: 7px
+    &__example
+        color: $lightGrey
+        line-height: 120%
+    &__text
+        line-height: 150%
+        margin-top: 24px
+        color: $link
+        margin-bottom: 51px
+.already
+    max-width: 650px
+    padding: 60px 51px 48px 50px
+    flex-direction: column
+    align-items: center
+    justify-content: flex-start
+    &__text
+        margin: 16px 0 39px
+        line-height: 120%
+        color: $link
+        max-width: 500px
+    &__getted
+        color: $link
+        margin-bottom: 41px

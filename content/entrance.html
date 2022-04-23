@@ -10,6 +10,9 @@
 </head>
 <body>
     <section class="entrance section">
+
+        <a href="tracking.html" class="button_link"></a>
+
         <div class="container">
             <div class="logo row">
                 <img src="../img/logo.svg" alt="IBOX" class="logo__img">
@@ -31,10 +34,10 @@
                     <button class="button button_primary form__button">Войти</button>
                 </form>
                 <div class="entry__links">
-                    <a href="#" class="entry__link_password entry__link section__link">Восстановить пароль</a> 
+                    <span id="get" class="entry__link_password entry__link section__link">Восстановить пароль</span> 
                     <p class="entry__link entry__link_agree">Выполняя вход, я соглашаюсь с <a href="#" class="entry__link section__link">пользовательским соглашением</a></p>
                 </div>
-                <span class="entry__demo"><a href="tracking.html" class="entry__demo_link">Демо-режим</a></span>
+                <span class="entry__demo"><a href="demo.html" class="entry__demo_link">Демо-режим</a></span>
             </div>
             <button class="button button_secondary entrance__button">Выберите устройство</button>
             <p class="section__text entrance__text">Индивидуальный подбор радар-детекторов, видеорегистраторов и комбо-устройств для вашего автомобиля в интернет-магазине iboxstore</p>
@@ -46,5 +49,24 @@
             </div>
         </div>
     </section>
+    <div class="shadow">
+        <div class="get window active">
+            <img src="../img/cross.svg" alt="close" class="window__cross get__cross">
+            <h3 class="get__title window__head">Восстановить пароль</h3>
+            <form action="#" class="form get__form">
+                <input class="get__input input _req" type="text" placeholder="E-mail/Телефон">
+                <span class="get__example">mail@example.net или 79123456789</span>
+                <p class="get__text">Если Вы забыли пароль, то воспользуйтесь этой формой для его восстановления. <br>Вы получите письмо на электронную почту с&nbsp;соответствующими инструкциями.</p>
+                <button class="button button_primary get__button window__button">Отправить</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="already window">
+        <h3 class="already__title window__head">Сообщение с восстановлением пароля отправлено!</h3>
+        <p class="already__text">Пожалуйста, проверьте ваш почтовый ящик и выполните следующие указания.</p>
+        <span class="already__getted">Письмо отправлено на: <span></span></span>
+        <button class="button button_primary window__button already__button">ОК</button>
+    </div>
 </body>
 </html>

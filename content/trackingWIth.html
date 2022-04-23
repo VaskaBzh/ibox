@@ -4,12 +4,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/date-picker.css">
     <link rel="stylesheet" href="../css/style.css">
     <script type='text/javascript' src='https://www.bing.com/api/maps/mapcontrol?callback=GetMap' async defer></script>
     <script src="../src/modules/mapInit.js" defer></script>
-    <script src="../dist/jquery.min.js" defer></script>
-    <script src="../dist/date-picker.min.js" defer></script>
     <script src="../dist/bundleTrackWith.js" type="text/javascript" defer></script>
     <title>IBox</title>
 </head>
@@ -19,23 +16,32 @@
       <div id='mapDiv'></div>
       <br style="clear: left;"/>
 
+      <a id="open-element" href="trackingWithOpen.html"></a>
+      <a id="get-element" href="trackingWithTwo.html"></a>
       <a id="back-to-entrance" href="entrance.html"></a>
 
-      <div class="modal">
+      <div class="modal modal_with">
         <div class="modal__block">
-          <input id="date" type='text' class="datepicker-here input modal__input" data-position="right top" placeholder="Дата поездок">
+          <div class="modal__block_item">
+            <input id="date" type='text' class="input modal__input input_date" placeholder="Дата поездок">
+            <label class="input_date_img" for="date"><img src="../img/calendar.svg" alt="calendar"></label>
+          </div>
           <div class="modal__new">
-            <div class="modal__line"></div>
             <div class="row modal__new__block">
               <div class="modal__new__head">
-                <input type="text" class="modal__new__title" value="Sonar LaserScan Signature Cloud">
+                <div class="modal__new__head_block">
+                  <input type="text" class="modal__new__title" value="Sonar LaserScan Signature Cloud">
+                  <span id="change" class="modal__new__title_using modal__new__title_change"><img src="../img/change.svg" alt="change"></span>
+                  <span id="acsess" class="modal__new__title_using modal__new__title_acsess"><img src="../img/tick.svg" alt="acsess"></span>
+                  <span id="cross-little" class="modal__new__title_using modal__new__title_close"><img src="../img/cross-little.svg" alt="close"></span>
+                </div>
                 <span class="modal__new__heading">IMEI 13221321232133</span>
               </div>
               <img src="../img/new-image.svg" alt="">
             </div>
             <button class="button button_primary modal__new__button">Последнее местоположение автомобиля</button>
-            <button class="button button_primary modal__new__button">Запрос поездок</button>
-            <div class="modal__line modal__line_second"></div>
+            <button id="calendar" class="button button_primary modal__new__button">Запрос поездок</button>
+            <span class="modal__delete">Удалить устройство</span>
           </div>
           <button id="new" class="button button_secondary modal__button"><img src="../img/plus.svg" alt="plus"> Добавить устройство</button>
         </div>
@@ -45,6 +51,79 @@
       <div class="tracking__button"><img src="../img/white-arrow.svg" alt="toggle-arrow" style="transform: rotate(180deg);"></div>
     </section>
 
+    <div class="calendar window">
+      <div class="calendar__block">
+        <span class="calendar__link calendar__link_yesterday">Вчера</span>
+        <span class="calendar__link calendar__link_today">Сегодня</span>
+      </div>
+      <img src="../img/cross.svg" alt="close" class="window__cross calendar__cross">
+      <div class="calendar__nav">
+        <div class="calendar__nav__button calendar__nav__button_prev"><img src="../img/dark-prev.svg" alt=""></div>
+        <div class="calendar__value">
+          <span class="calendar__value__elem calendar__value__elem_mounth">Февраль </span>
+          <span class="calendar__value__elem calendar__value__elem_year"> 2022</span>
+        </div>
+        <div class="calendar__nav__button calendar__nav__button_next"><img src="../img/dark-next.svg" alt=""></div>
+      </div>
+      <table class="table">
+        <tr class="table__row table__row_head">
+          <th class="table__head">Пн</th>
+          <th class="table__head">Вт</th>
+          <th class="table__head">Ср</th>
+          <th class="table__head">Чт</th>
+          <th class="table__head">Пт</th>
+          <th class="table__head">Сб</th>
+          <th class="table__head">Вс</th>
+        </tr>
+        <tr class="table__row">
+          <td class="table__elem table__elem_none table__elem_prev">31</td>
+          <td class="table__elem">1</td>
+          <td class="table__elem">2</td>
+          <td class="table__elem">3</td>
+          <td class="table__elem">4</td>
+          <td class="table__elem">5</td>
+          <td class="table__elem">6</td>
+        </tr>
+        <tr class="table__row">
+          <td class="table__elem">7</td>
+          <td class="table__elem">8</td>
+          <td class="table__elem">9</td>
+          <td class="table__elem">10</td>
+          <td class="table__elem">11</td>
+          <td class="table__elem">12</td>
+          <td class="table__elem">13</td>
+        </tr>
+        <tr class="table__row">
+          <td class="table__elem">14</td>
+          <td class="table__elem">15</td>
+          <td class="table__elem">16</td>
+          <td class="table__elem">17</td>
+          <td class="table__elem">18</td>
+          <td class="table__elem">19</td>
+          <td class="table__elem">20</td>
+        </tr>
+        <tr class="table__row">
+          <td class="table__elem">21</td>
+          <td class="table__elem table__elem_today">22</td>
+          <td class="table__elem">23</td>
+          <td class="table__elem">24</td>
+          <td class="table__elem">25</td>
+          <td class="table__elem">26</td>
+          <td class="table__elem">27</td>
+        </tr>
+        <tr class="table__row">
+          <td class="table__elem">28</td>
+          <td class="table__elem table__elem_none table__elem_next">1</td>
+          <td class="table__elem table__elem_none table__elem_next">2</td>
+          <td class="table__elem table__elem_none table__elem_next">3</td>
+          <td class="table__elem table__elem_none table__elem_next">4</td>
+          <td class="table__elem table__elem_none table__elem_next">5</td>
+          <td class="table__elem table__elem_none table__elem_next">6</td>
+        </tr>
+      </table>
+      <button class="button button_primary window__button calendar__button">Применить</button>
+    </div>
+
     <div class="sure window">
       <span class="sure__question window__head">Вы уверены, что хотите покинуть личный кабинет?</span>
       <div class="sure__buttons">
@@ -52,26 +131,36 @@
         <button id="close" class="button button_primary sure__button window__button">Нет</button>
       </div>
     </div>
-  <div class="shadow">
-    <div class="new window">
-      <img src="../img/cross.svg" alt="close" class="window__cross new__cross">
-      <span class="new__question window__head">Добавить устройство</span>
-      <form action="#" class="form window__form new__form">
-        <div class="form__item new__chose">
-          <input id="list" type="text" class="input new__input window__input new__input_chose" placeholder="Выберите Ваше устройство">
-          <label for="list" style="transform: rotate(0deg);"><img src="../img/grey-arrow.svg" alt="open/close"></label>
-          <div class="new__list">
-            <span class="new__list__elem new__list__elem_border">Alert LaserScan Signature Cloud</span>
-            <span class="new__list__elem">Sonar LaserScan Signature Cloud</span>
-          </div>
-        </div>
-        <div class="form__item new__IMEI">
-          <input id="IMEI" type="text" class="input new__input window__input" placeholder="IMEI нового устройства/">
-          <label for="IMEI">?</label>
-        </div>
-        <button class="button button_primary new__button window__button form__button">Добавить</button>
-      </form>
+
+    <div class="window delete">
+      <p class="delete__question">Вы уверены, что хотите удалить <br>
+        устройство «<span></span>»?</p>
+      <div class="delete__block">
+        <button id="yes" class="button button_primary delete__button">Да</button>
+        <button id="no" class="button button_primary delete__button">Нет</button>
+      </div>
     </div>
-  </div>
+
+    <div class="shadow">
+      <div class="new window">
+        <img src="../img/cross.svg" alt="close" class="window__cross new__cross">
+        <span class="new__question window__head">Добавить устройство</span>
+        <form action="#" class="form window__form new__form">
+          <div class="form__item new__chose">
+            <input id="list" type="text" class="input new__input window__input new__input_chose" placeholder="Выберите Ваше устройство">
+            <label for="list" style="transform: rotate(0deg);"><img src="../img/grey-arrow.svg" alt="open/close"></label>
+            <div class="new__list">
+              <span class="new__list__elem new__list__elem_border">Alert LaserScan Signature Cloud</span>
+              <span class="new__list__elem">Sonar LaserScan Signature Cloud</span>
+            </div>
+          </div>
+          <div class="form__item new__IMEI">
+            <input id="IMEI" type="text" class="input new__input window__input" placeholder="IMEI нового устройства/">
+            <label for="IMEI">?</label>
+          </div>
+          <button class="button button_primary new__button window__button form__button">Добавить</button>
+        </form>
+      </div>
+    </div>
 </body>
 </html>
