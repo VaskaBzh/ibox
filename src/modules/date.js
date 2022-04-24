@@ -4,7 +4,6 @@ const date = () => {
     const buttonSubmit = document.querySelector('.calendar__button')
     const modal = document.querySelector('.calendar')
     const link = document.getElementById('open-element')
-    // const 
 
     const calendar = document.getElementById('date')
 

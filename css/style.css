@@ -844,7 +844,7 @@ a {
 }
 .modal__info__row {
   border-left: 1px solid #F4F4F4;
-  padding-left: 16px;
+  padding-left: 15px;
   color: #438EFF;
   font-size: 12px;
   line-height: 120%;
@@ -976,7 +976,6 @@ a {
 .delete {
   padding: 16px 56px 39px 60px;
   max-width: 649px;
-  display: flex;
   align-items: center;
   flex-direction: column;
   justify-content: flex-start;

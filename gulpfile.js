@@ -20,7 +20,8 @@ function javaScript() {
     const bundleStreamReg = browserify('./src/reg.js').bundle()
     const bundleStreamTrack = browserify('./src/tracking.js').bundle()
     const bundleStreamTrackWith = browserify('./src/trackingWith.js').bundle()
-    const bundleStreamTrackDemo = browserify('./src/trackingWith.js').bundle()
+    const bundleStreamTrackWithOpen = browserify('./src/trackingWithOpen.js').bundle()
+    const bundleStreamTrackDemo = browserify('./src/trackingDemo.js').bundle()
 
    
     bundleStreamEnter
@@ -47,6 +48,12 @@ function javaScript() {
       .pipe(rename('bundleTrackWith.js'))
       .pipe(dest('./dist/'))
       .pipe(browserSync.stream());
+      bundleStreamTrackWithOpen
+        .pipe(source('trackingWithOpen.js'))
+        .pipe(streamify(uglify()))
+        .pipe(rename('bundleTrackWithOpen.js'))
+        .pipe(dest('./dist/'))
+        .pipe(browserSync.stream());
       bundleStreamTrackDemo
         .pipe(source('trackingDemo.js'))
         .pipe(streamify(uglify()))
