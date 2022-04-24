@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="../css/style.css">
     <script type='text/javascript' src='https://www.bing.com/api/maps/mapcontrol?callback=GetMap' async defer></script>
     <script src="../src/modules/mapInit.js" defer></script>
-    <script src="../dist/bundleTrackWith.js" type="text/javascript" defer></script>
+    <script src="../dist/bundleTrackDemo.js" type="text/javascript" defer></script>
     <title>IBox</title>
 </head>
 <body>
@@ -16,7 +16,6 @@
       <div id='mapDiv'></div>
       <br style="clear: left;"/>
 
-      <a id="back-to-tracking" href="tracking.html"></a>
       <a id="open-element" href="trackingWithOpen.html"></a>
       <a id="get-element" href="trackingWithTwo.html"></a>
       <a id="back-to-entrance" href="entrance.html"></a>
@@ -28,9 +27,6 @@
             <label class="input_date_img" for="date"><img src="../img/calendar.svg" alt="calendar"></label>
           </div>
           <div class="modal__new">
-
-            <div class="modal__new_border"></div>
-
             <div class="row modal__new__block">
               <div class="modal__new__head">
                 <div class="modal__new__head_block">
@@ -44,53 +40,33 @@
               <img src="../img/new-image.svg" alt="">
             </div>
             <button class="button button_primary modal__new__button">Последнее местоположение автомобиля</button>
-            <button style="display: none;" id="calendar" class="button button_primary modal__new__button">Запрос поездок</button>
-
-            <div class="modal__info">
-              <div class="modal__info__head row">
-                <div class="modal__info__head_group row">
-                  <span class="modal__info__header">Маршрут</span>
-                  <span class="modal__info__header_change"><img src="../img/change.svg" alt="change"></span>
-                </div>
-                <span class="modal__info__bin"><img src="../img/bin.svg" alt="delete"></span>
-              </div>
-              <div class="modal__info__block row">
-                <div class="modal__info__block_group row">
-                  <span class="modal__info__text modal__info__text_time">08:00 - 11:00</span>
-                  <span class="modal__info__text modal__info__text_info">Стоянка 2 часа</span>
-                </div>
-                <span class="modal__info__bin"><img src="../img/bin.svg" alt="delete"></span>
-              </div>
-              <div class="modal__info__block row">
-                <div class="modal__info__block_group modal__info__block_play row">
-                  <span class="modal__info__text modal__info__text_time">11:00 - 14:30</span>
-                  <span class="modal__info__text modal__info__stop_info">Поездка1 3,16 км</span>
-                  <span class="modal__info__play"><img src="../img/play.svg" alt="delete"></span>
-                </div>
-                <span class="modal__info__bin"><img src="../img/bin.svg" alt="delete"></span>
-              </div>
-              <div class="modal__info__block modal__info__block_margin row">
-                <div class="modal__info__block_group modal__info__block_eye row">
-                  <span class="modal__info__text modal__info__text_time">14:00</span>
-                  <span class="modal__info__text modal__info__text_info modal__info__text_margin">Пользовательская точка1</span>
-                  <span class="modal__info__eye"><img src="../img/eye-off.svg" alt="delete"></span>
-                </div>
-                <span class="modal__info__bin modal__info__bin_eye"><img src="../img/bin.svg" alt="delete"></span>
-              </div>
-              <div class="modal__info__foot row">
-                <span class="modal__info__speed">Средняя скорость: 48 км/ч
-                  Максимальная скорость: 64 км/ч</span>
-                <span class="modal__info__row">Всего: 3,16 км</span>
-              </div>
+            <div class="modal__new_swap">
+              <button id="calendar" class="button button_primary modal__new__button">Запрос поездок</button>
+              <span class="modal__delete">Удалить устройство</span>
             </div>
           </div>
-
-          <span class="modal__delete">Удалить устройство</span>
+          <div class="modal__new">
+            <div class="row modal__new__block">
+              <div class="modal__new__head">
+                <div class="modal__new__head_block">
+                  <input type="text" class="modal__new__title" value="Alert  LaserScan Signature Cloud">
+                  <span id="change" class="modal__new__title_using modal__new__title_change"><img src="../img/change.svg" alt="change"></span>
+                  <span id="acsess" class="modal__new__title_using modal__new__title_acsess"><img src="../img/tick.svg" alt="acsess"></span>
+                  <span id="cross-little" class="modal__new__title_using modal__new__title_close"><img src="../img/cross-little.svg" alt="close"></span>
+                </div>
+                <span class="modal__new__heading">IMEI 13221321232133</span>
+              </div>
+              <img src="../img/new-image2.svg" alt="">
+            </div>
+            <button class="button button_primary modal__new__button">Последнее местоположение автомобиля</button>
+            <div class="modal__new_swap">
+              <button id="calendar" class="button button_primary modal__new__button">Запрос поездок</button>
+              <span class="modal__delete">Удалить устройство</span>
+            </div>
+          </div>
           <button id="new" class="button button_secondary modal__button"><img src="../img/plus.svg" alt="plus"> Добавить устройство</button>
         </div>
-        <div class="modal__sure">
-          <button id="sure" class="button button_secondary modal__button">Выйти из личного кабинета</button>
-        </div>
+        <button id="sure" class="button button_secondary modal__button">Выйти из личного кабинета</button>
       </div>
       
       <div class="tracking__button"><img src="../img/white-arrow.svg" alt="toggle-arrow" style="transform: rotate(180deg);"></div>

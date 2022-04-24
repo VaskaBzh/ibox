@@ -23,6 +23,7 @@ const validationForm = () => {
     buttonClose.addEventListener('click', modalToggle)
 
     buttonCloseGetted.addEventListener('click', modalToggleGetted)
+    buttonCloseGetted.addEventListener('click', modalToggle)
 
     // Валидация форм
 
@@ -64,12 +65,11 @@ const validationForm = () => {
         let error = formValidate(formGet)
 
         if (error === 0) {
-            formGet.reset()
             modalToggleGetted()
             info.textContent = getInput.value
         } else {
             alert('Заполните корректно форму')
-    }
+        }
     }
 
     form.addEventListener('submit', formEnter)

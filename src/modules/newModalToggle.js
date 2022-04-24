@@ -5,6 +5,8 @@ const newModal = () => {
     const modal = document.querySelector('.shadow')
     const newInput = document.getElementById('list')
     const link = document.getElementById('get-element')
+    const getted = document.querySelector('.new_ready')
+    const gettedButton = document.querySelector('.new_ready__button')
 
     const modalToggle = () => {
         modal.classList.toggle('active')
@@ -14,7 +16,8 @@ const newModal = () => {
     buttonClose.addEventListener('click', modalToggle)
     buttonSubmit.addEventListener('click', (e) => {
         if (newInput.value != '') {
-            link.click()
+            getted.classList.toggle('active')
+            gettedButton.addEventListener('click', () => {link.click()})
         } else {
             e.preventDefault
         }

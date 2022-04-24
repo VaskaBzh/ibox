@@ -57,7 +57,7 @@ a
             margin-right: -3px
 .modal
     position: relative
-    padding: 99px 38px 35px 43px
+    padding: 99px 38px 125px 43px
     display: flex
     flex-direction: column
     align-items: center
@@ -96,6 +96,15 @@ a
             width: 22px
             height: 22px
             margin-left: 10px
+    &__sure
+        padding: 28px 42px 35px
+        width: 100%
+        background: $light
+        z-index: 13
+        position: fixed
+        max-width: 464px
+        left: 0
+        bottom: 0
     &__block
         width: 100%
         min-height: 131px
@@ -115,6 +124,13 @@ a
         display: flex
         flex-direction: column
         align-items: center
+        &_border
+            width: 4px
+            background: $link
+            min-height: 392px
+            position: absolute
+            left: 25px
+            top: 218px
         &__head
             max-width: 280px
             width: 100%
@@ -168,6 +184,74 @@ a
             max-width: 100%
     &_with
         padding: 81px 0 35px
+    &__info
+        margin-top: 8px
+        padding: 17px 18px 15px
+        margin-bottom: 10px
+        max-width: 380px
+        width: 100%
+        border-radius: 8px
+        border: 1px solid $borderLight
+        &__head
+            border-bottom: 1px solid $borderLight
+            border-top: 1px solid $borderLight
+            padding: 0 0 12px 0
+            width: 100%
+            margin-bottom: 17px
+            &_group
+                max-width: 99px
+                width: 100%
+        &__block
+            margin-bottom: 24px
+            &_group
+                max-width: 206px
+                width: 100%
+            &_eye
+                margin-bottom: 15px
+                max-width: 309px
+            &_play
+                max-width: 257px
+            &_margin 
+                margin-bottom: -4px
+        &__header
+            line-height: 120%
+            color: $link
+        &__text
+            font-size: 14px
+            line-height: 120%
+            color: $link
+            &_time
+                margin-right: 28px
+            &_margin
+                margin-left: 44px
+        &__play
+            margin-left: 14px
+            max-width: 25px
+        &__eye
+            margin-left: 2px
+            max-width: 26px
+            min-height: 29px
+        &__bin
+            max-width: 14px
+            min-height: 19px
+            &_eye
+                margin-bottom: 10px
+        &__speed
+            max-width: 186px
+            width: 100%
+            margin-right: 61px
+            margin-top: 12px
+            color: $link
+            font-size: 12px
+            line-height: 146%
+        &__row
+            border-left: 1px solid $borderLight
+            padding-left: 16px
+            color: $blue
+            font-size: 12px
+            line-height: 120%
+            padding-top: 23px
+            padding-bottom: 11px
 .shadow
     width: 100%
     height: 100vh

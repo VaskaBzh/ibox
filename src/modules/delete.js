@@ -1,9 +1,9 @@
 const deleteElem = () => {
  const deleteEl = document.querySelectorAll('.modal__delete')
  const buttonClose = document.getElementById('no')
- const buttonEntranceForm = document.getElementById('to-entrance')
  const modal = document.querySelector('.delete')
- const linkEntranceForm = document.getElementById('yes')
+ const yes = document.getElementById('yes')
+ const link = document.getElementById('back-to-tracking')
  const title = document.querySelectorAll('.modal__new__title')
  const toggled = document.querySelector('.delete__question span')
 
@@ -12,7 +12,7 @@ const deleteElem = () => {
  }
 
  buttonClose.addEventListener('click', modalToggle)
- buttonEntranceForm.addEventListener('click', () => {linkEntranceForm.click()})
+ yes.addEventListener('click', () => {link.click()})
 
  deleteEl.forEach((elem, index) => {
      elem.addEventListener('click', modalToggle)
