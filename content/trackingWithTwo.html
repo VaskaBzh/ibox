@@ -5,9 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/style.css">
-    <script src="../src/modules/mapInitOpenMobile.js" defer></script>
     <script type='text/javascript' src='https://www.bing.com/api/maps/mapcontrol?callback=GetMap' async defer></script>
-    <script src="../dist/bundleTrackWithOpen.js" type="text/javascript" defer></script>
+    <script src="../src/modules/mapInit.js" defer></script>
+    <script src="../dist/bundleTrackWithTwo.js" type="text/javascript" defer></script>
     <title>IBox</title>
 </head>
 <body>
@@ -15,12 +15,9 @@
       <div class="div"></div>
       <div id='mapDiv'></div>
       <br style="clear: left;"/>
-      <div id='directionsItinerary'></div> 
 
       <a id="back-to-tracking" href="tracking.html"></a>
-      <a id="open-mobile" href="trackingWithOpenMobile.html"></a>
       <a id="open-element" href="trackingWithOpen.html"></a>
-      <a id="get-element" href="trackingWithTwo.html"></a>
       <a id="back-to-entrance" href="entrance.html"></a>
 
       <div class="modal modal_with">
@@ -46,48 +43,8 @@
               <img src="../img/new-image.svg" alt="">
             </div>
             <button class="button button_primary modal__new__button">Последнее местоположение автомобиля</button>
-            <button style="display: none;" id="calendar" class="button button_primary modal__new__button">Запрос поездок</button>
-
-            <div class="modal__info">
-              <div class="modal__info__head row">
-                <div class="modal__info__head_group row">
-                  <span class="modal__info__header">Маршрут</span>
-                  <span class="modal__info__header_change"><img src="../img/change.svg" alt="change"></span>
-                </div>
-                <span class="modal__info__bin"><img src="../img/bin.svg" alt="delete"></span>
-              </div>
-              <div class="modal__info__block row">
-                <div class="modal__info__block_group row">
-                  <span class="modal__info__text modal__info__text_time">08:00 - 11:00</span>
-                  <span class="modal__info__text modal__info__text_info">Стоянка 2 часа</span>
-                </div>
-                <span class="modal__info__bin"><img src="../img/bin.svg" alt="delete"></span>
-              </div>
-              <div class="modal__info__block row">
-                <div class="modal__info__block_group modal__info__block_play row">
-                  <span class="modal__info__text modal__info__text_time">11:00 - 14:30</span>
-                  <span class="modal__info__text modal__info__stop_info">Поездка1 3,16 км</span>
-                  <span class="modal__info__play"><img src="../img/play.svg" alt="delete"></span>
-                </div>
-                <span class="modal__info__bin"><img src="../img/bin.svg" alt="delete"></span>
-              </div>
-              <div class="modal__info__block modal__info__block_margin row">
-                <div class="modal__info__block_group modal__info__block_eye row">
-                  <span class="modal__info__text modal__info__text_time">14:00</span>
-                  <span class="modal__info__text modal__info__text_info modal__info__text_margin">Пользовательская точка1</span>
-                  <span class="modal__info__eye"><img src="../img/eye-off.svg" alt="delete"></span>
-                </div>
-                <span class="modal__info__bin modal__info__bin_eye"><img src="../img/bin.svg" alt="delete"></span>
-              </div>
-              <div class="modal__info__foot row">
-                <span class="modal__info__speed">Средняя скорость: 48 км/ч
-                  Максимальная скорость: 64 км/ч</span>
-                <span class="modal__info__row">Всего: 3,16 км</span>
-              </div>
-            </div>
-
-            <span class="modal__delete">Удалить устройство</span>
-          </div>
+            <button id="calendar" class="button button_primary modal__new__button">Запрос поездок</button>
+          <span class="modal__delete">Удалить устройство</span>
           <button id="new" class="button button_secondary modal__button"><img src="../img/plus.svg" alt="plus"> Добавить устройство</button>
         </div>
         <div class="modal__sure">
@@ -170,7 +127,7 @@
       </table>
       <button class="button button_primary window__button calendar__button">Применить</button>
     </div>
-    
+
     <div class="sure window">
       <span class="sure__question window__head">Вы уверены, что хотите покинуть личный кабинет?</span>
       <div class="sure__buttons">

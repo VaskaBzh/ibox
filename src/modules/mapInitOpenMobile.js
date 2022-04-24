@@ -6,10 +6,10 @@
     var ppLayer = null;
 
     const eye = document.querySelector('.modal__info__eye img')
-    const play = document.querySelector('.modal__info__play')
-    const link = document.getElementById('open-mobile')
+    const stop = document.querySelector('.modal__info__stop')
+    const link = document.getElementById('open-element')
 
-    play.addEventListener('click', () => {
+    stop.addEventListener('click', () => {
         link.click()
     })
 
@@ -17,7 +17,7 @@
         map = new Microsoft.Maps.Map('#mapDiv',
             {
                 credentials: "YOUR_BING_MAPS_KEY",
-                center: new Microsoft.Maps.Location(55.75, 37.3),
+                center: new Microsoft.Maps.Location(55.8, 37.4),
                 zoom: 10
             });
 
@@ -71,21 +71,32 @@ Microsoft.Maps.loadModule('Microsoft.Maps.Directions', function () {
             width: 45,
             height: 38
         });
+        var car = new Microsoft.Maps.Pushpin(new Microsoft.Maps.Location(55.816435, 37.388313), {
+            icon: '../img/car.svg',
+            width: 22,
+            height: 50
+        });
         pin.Metadata = {
             htmlContent: '<div class="infobox"><div class="infobox_arrow"></div><img src="../img/copy.svg"></img><div class="infobox__row row"><span class="infobox__title">Координаты: </span><span class="infobox__text">55.785590, 49.124010</span></div><div class="infobox__row row"><span class="infobox__title">Скорость: </span><span class="infobox__text">58 км/ч</span></div><div class="infobox__row row"><span class="infobox__title">Адрес:</span><span class="infobox__text">ул. Четаева, 6, г. Казань, Россия</span></div><div class="infobox__row row"><span class="infobox__title">Дата и время: </span><span class="infobox__text">22/02/2022 10:44:22</span></div></div>'
         };
         pinMan.Metadata = {
             htmlContent: '<div class="infobox"><div class="infobox_arrow"></div><img src="../img/copy.svg"></img><div class="infobox__row row"><span class="infobox__title">Координаты: </span><span class="infobox__text">55.785590, 49.124010</span></div><div class="infobox__row row"><span class="infobox__title">Скорость: </span><span class="infobox__text">58 км/ч</span></div><div class="infobox__row row"><span class="infobox__title">Адрес:</span><span class="infobox__text">ул. Четаева, 6, г. Казань, Россия</span></div><div class="infobox__row row"><span class="infobox__title">Дата и время: </span><span class="infobox__text">22/02/2022 10:44:22</span></div></div>'
         };
+        car.Metadata = {
+            htmlContent: '<div class="infobox"><div class="infobox_arrow"></div><img src="../img/copy.svg"></img><div class="infobox__row row"><span class="infobox__title">Координаты: </span><span class="infobox__text">55.785590, 49.124010</span></div><div class="infobox__row row"><span class="infobox__title">Скорость: </span><span class="infobox__text">58 км/ч</span></div><div class="infobox__row row"><span class="infobox__title">Адрес:</span><span class="infobox__text">ул. Четаева, 6, г. Казань, Россия</span></div><div class="infobox__row row"><span class="infobox__title">Дата и время: </span><span class="infobox__text">22/02/2022 10:44:22</span></div></div>'
+        };
         //Добавляем событие открытия infobox при нажатии на метку
         Microsoft.Maps.Events.addHandler(pin, 'click', OpenInfobox);
         Microsoft.Maps.Events.addHandler(pinMan, 'click', OpenInfobox);
+        Microsoft.Maps.Events.addHandler(car, 'click', OpenInfobox);
         
         Microsoft.Maps.Events.addHandler(map, 'click', CloseInfobox(pinMan));
         Microsoft.Maps.Events.addHandler(map, 'click', CloseInfobox(pin));
+        Microsoft.Maps.Events.addHandler(map, 'click', CloseInfobox(car));
         //Добавляем метку на карту. 
         map.entities.push(pin);
         map.entities.push(pinMan);
+        map.entities.push(car);
         //клик на глаз (не работает)
         eye.addEventListener('click', ()=> {
             if (eye.getAttribute('src') == '../img/eye-off.svg') {

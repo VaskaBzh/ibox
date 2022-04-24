@@ -21,6 +21,7 @@ function javaScript() {
     const bundleStreamTrack = browserify('./src/tracking.js').bundle()
     const bundleStreamTrackWith = browserify('./src/trackingWith.js').bundle()
     const bundleStreamTrackWithOpen = browserify('./src/trackingWithOpen.js').bundle()
+    const bundleStreamTrackWithOpenMobile = browserify('./src/trackingWithOpenMobile.js').bundle()
     const bundleStreamTrackDemo = browserify('./src/trackingDemo.js').bundle()
 
    
@@ -54,6 +55,12 @@ function javaScript() {
         .pipe(rename('bundleTrackWithOpen.js'))
         .pipe(dest('./dist/'))
         .pipe(browserSync.stream());
+        bundleStreamTrackWithOpenMobile
+          .pipe(source('trackingWithOpenMobile.js'))
+          .pipe(streamify(uglify()))
+          .pipe(rename('bundleTrackWithOpenMobile.js'))
+          .pipe(dest('./dist/'))
+          .pipe(browserSync.stream());
       bundleStreamTrackDemo
         .pipe(source('trackingDemo.js'))
         .pipe(streamify(uglify()))

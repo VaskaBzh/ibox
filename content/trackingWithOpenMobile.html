@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="../css/style.css">
     <script src="../src/modules/mapInitOpenMobile.js" defer></script>
     <script type='text/javascript' src='https://www.bing.com/api/maps/mapcontrol?callback=GetMap' async defer></script>
-    <script src="../dist/bundleTrackWithOpen.js" type="text/javascript" defer></script>
+    <script src="../dist/bundleTrackWithOpenMobile.js" type="text/javascript" defer></script>
     <title>IBox</title>
 </head>
 <body>
@@ -18,7 +18,6 @@
       <div id='directionsItinerary'></div> 
 
       <a id="back-to-tracking" href="tracking.html"></a>
-      <a id="open-mobile" href="trackingWithOpenMobile.html"></a>
       <a id="open-element" href="trackingWithOpen.html"></a>
       <a id="get-element" href="trackingWithTwo.html"></a>
       <a id="back-to-entrance" href="entrance.html"></a>
@@ -26,13 +25,10 @@
       <div class="modal modal_with">
         <div class="modal__block">
           <div class="modal__block_item">
-            <input id="date" type='text' class="input modal__input input_date" placeholder="Дата поездок">
+            <input id="date" type='text' class="input modal__input input_date" placeholder="22.02.2022">
             <label class="input_date_img" for="date"><img src="../img/calendar.svg" alt="calendar"></label>
           </div>
           <div class="modal__new">
-
-            <div class="modal__new_border"></div>
-
             <div class="row modal__new__block">
               <div class="modal__new__head">
                 <div class="modal__new__head_block">
@@ -46,7 +42,6 @@
               <img src="../img/new-image.svg" alt="">
             </div>
             <button class="button button_primary modal__new__button">Последнее местоположение автомобиля</button>
-            <button style="display: none;" id="calendar" class="button button_primary modal__new__button">Запрос поездок</button>
 
             <div class="modal__info">
               <div class="modal__info__head row">
@@ -56,20 +51,37 @@
                 </div>
                 <span class="modal__info__bin"><img src="../img/bin.svg" alt="delete"></span>
               </div>
-              <div class="modal__info__block row">
+              <div class="modal__info__block modal__info__block_low row">
                 <div class="modal__info__block_group row">
                   <span class="modal__info__text modal__info__text_time">08:00 - 11:00</span>
                   <span class="modal__info__text modal__info__text_info">Стоянка 2 часа</span>
                 </div>
                 <span class="modal__info__bin"><img src="../img/bin.svg" alt="delete"></span>
               </div>
-              <div class="modal__info__block row">
-                <div class="modal__info__block_group modal__info__block_play row">
+              <div class="modal__info__block modal__info__block_low row">
+                <div class="modal__info__block_group modal__info__block_close row">
                   <span class="modal__info__text modal__info__text_time">11:00 - 14:30</span>
                   <span class="modal__info__text modal__info__stop_info">Поездка1 3,16 км</span>
-                  <span class="modal__info__play"><img src="../img/play.svg" alt="delete"></span>
+                  <span class="modal__info__pause"><img src="../img/pause.svg" alt="pause"></span>
+                  <span class="modal__info__stop"><img src="../img/stop.svg" alt="stop"></span>
                 </div>
                 <span class="modal__info__bin"><img src="../img/bin.svg" alt="delete"></span>
+              </div>
+              <div class="modal__info__block modal__info__block_low modal__info__block_range row">
+                <div class="modal__info__block_group modal__info__block_item">
+                  <div class="modal__info__range">
+                    <div class="modal__info__range_progress"></div>
+                    <div class="modal__info__range_line"></div>
+                  </div>
+                  <span class="modal__info__block_time">00:00:00/01:20:26</span>
+                </div>
+              <span class="modal__info__block__select modal__info__block__select_margin">x1<img src="../img/dark-arrow.svg" alt="arrow"></span>
+                <div class="modal__info__block__list">
+                  <span class="modal__info__block__select">x1,5</span>
+                  <span class="modal__info__block__select">x2</span>
+                  <span class="modal__info__block__select">x5</span>
+                  <span class="modal__info__block__select">x10</span>
+                </div>
               </div>
               <div class="modal__info__block modal__info__block_margin row">
                 <div class="modal__info__block_group modal__info__block_eye row">
