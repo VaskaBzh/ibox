@@ -5,9 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/style.css">
-    <script src="../src/modules/mapInitOpen.js" defer></script>
     <script type='text/javascript' src='https://www.bing.com/api/maps/mapcontrol?callback=GetMap' async defer></script>
-    <script src="../dist/bundleTrackWithOpen.js" type="text/javascript" defer></script>
+    <script src="../src/modules/mapInitDemoOpenFirstMobile.js" defer></script>
+    <script src="../dist/bundleTrackDemoOpenMobile.js" type="text/javascript" defer></script>
     <title>IBox</title>
 </head>
 <body>
@@ -15,13 +15,13 @@
       <div class="div"></div>
       <div id='mapDiv'></div>
       <br style="clear: left;"/>
-      <div id='directionsItinerary'></div> 
 
-      <a id="back-to-tracking" href="tracking.html"></a>
-      <a id="open-mobile" href="trackingWithOpenMobile.html"></a>
-      <a id="open-element" href="trackingWithOpen.html"></a>
+      <a id="go-to-first" href="trackingZoomFirst.html"></a>
+      <a id="go-to-second" href="trackingZoomSecond.html"></a>
+      <a id="back-to-tracking" href="trackingWith.html"></a>
+      <a id="donate-new" href="donate.html"></a>
+      <a id="open-element" href="trackingDemoOpenFirst.html"></a>
       <a id="open-element-second" href="trackingDemoOpenSecond.html"></a>
-      <a id="get-element" href="trackingWithTwo.html"></a>
       <a id="back-to-entrance" href="entrance.html"></a>
 
       <div class="modal modal_with">
@@ -46,8 +46,8 @@
               </div>
               <img src="../img/new-image.svg" alt="">
             </div>
-            <button class="button button_primary modal__new__button">Последнее местоположение автомобиля</button>
-            <button style="display: none;" id="calendar" class="button button_primary modal__new__button">Запрос поездок</button>
+            <button id="last" class="button button_primary modal__new__button">Последнее местоположение автомобиля</button>
+            <button id="calendar" style="display: none" class="button button_primary modal__new__button">Запрос поездок</button>
 
             <div class="modal__info">
               <div class="modal__info__head row">
@@ -65,12 +65,29 @@
                 <span class="modal__info__bin"><img src="../img/bin.svg" alt="delete"></span>
               </div>
               <div class="modal__info__block row">
-                <div class="modal__info__block_group modal__info__block_play row">
+                <div class="modal__info__block_group modal__info__block_close row">
                   <span class="modal__info__text modal__info__text_time">11:00 - 14:30</span>
                   <span class="modal__info__text modal__info__stop_info">Поездка1 3,16 км</span>
-                  <span class="modal__info__play"><img src="../img/play.svg" alt="delete"></span>
+                  <span class="modal__info__pause"><img src="../img/pause.svg" alt="pause"></span>
+                  <span class="modal__info__stop"><img src="../img/stop.svg" alt="stop"></span>
                 </div>
                 <span class="modal__info__bin"><img src="../img/bin.svg" alt="delete"></span>
+              </div>
+              <div class="modal__info__block modal__info__block_low modal__info__block_range row">
+                <div class="modal__info__block_group modal__info__block_item">
+                  <div class="modal__info__range">
+                    <div class="modal__info__range_progress"></div>
+                    <div class="modal__info__range_line"></div>
+                  </div>
+                  <span class="modal__info__block_time">00:00:00/01:20:26</span>
+                </div>
+              <span class="modal__info__block__select modal__info__block__select_margin">x1<img src="../img/dark-arrow.svg" alt="arrow"></span>
+                <div class="modal__info__block__list">
+                  <span class="modal__info__block__select">x1,5</span>
+                  <span class="modal__info__block__select">x2</span>
+                  <span class="modal__info__block__select">x5</span>
+                  <span class="modal__info__block__select">x10</span>
+                </div>
               </div>
               <div class="modal__info__block modal__info__block_margin row">
                 <div class="modal__info__block_group modal__info__block_eye row">
@@ -87,15 +104,38 @@
               </div>
             </div>
 
-            <span class="modal__delete">Удалить устройство</span>
-          </div>
-          <button id="new" class="button button_secondary modal__button"><img src="../img/plus.svg" alt="plus"> Добавить устройство</button>
+            
+          <span class="modal__delete">Удалить устройство</span><div class="row modal__new__block">
         </div>
+      </div>
+        <div class="modal__new">
+
+          <!-- <div class="modal__new_border"></div> -->
+
+          <div class="row modal__new__block">
+            <div class="modal__new__head">
+              <div class="modal__new__head_block">
+                <input type="text" class="modal__new__title" value="Alert  LaserScan Signature Cloud">
+                <span id="change" class="modal__new__title_using modal__new__title_change"><img src="../img/change.svg" alt="change"></span>
+                <span id="acsess" class="modal__new__title_using modal__new__title_acsess"><img src="../img/tick.svg" alt="acsess"></span>
+                <span id="cross-little" class="modal__new__title_using modal__new__title_close"><img src="../img/cross-little.svg" alt="close"></span>
+              </div>
+              <span class="modal__new__heading">IMEI 13221321232133</span>
+            </div>
+            <img src="../img/new-image2.svg" alt="">
+          </div>
+          <button id="last" class="button button_primary modal__new__button">Последнее местоположение автомобиля</button>
+          <button id="calendar" class="button button_primary modal__new__button">Запрос поездок</button>
+        <span class="modal__delete">Удалить устройство</span><div class="row modal__new__block">
+      </div>
+      <button style="display: none;" id="new" class="button button_secondary modal__button"><img src="../img/plus.svg" alt="plus"> Добавить устройство</button>
         <div class="modal__sure">
           <button id="sure" class="button button_secondary modal__button">Выйти из личного кабинета</button>
         </div>
       </div>
-      
+    </div>
+  </div>
+
       <div class="tracking__button"><img src="../img/white-arrow.svg" alt="toggle-arrow" style="transform: rotate(180deg);"></div>
     </section>
 
@@ -171,7 +211,7 @@
       </table>
       <button class="button button_primary window__button calendar__button">Применить</button>
     </div>
-    
+
     <div class="sure window">
       <span class="sure__question window__head">Вы уверены, что хотите покинуть личный кабинет?</span>
       <div class="sure__buttons">
@@ -189,25 +229,12 @@
       </div>
     </div>
 
-    <div class="shadow">
-      <div class="new window">
-        <img src="../img/cross.svg" alt="close" class="window__cross new__cross">
-        <span class="new__question window__head">Добавить устройство</span>
-        <form action="#" class="form window__form new__form">
-          <div class="form__item new__chose">
-            <input id="list" type="text" class="input new__input window__input new__input_chose" placeholder="Выберите Ваше устройство">
-            <label for="list" style="transform: rotate(0deg);"><img src="../img/grey-arrow.svg" alt="open/close"></label>
-            <div class="new__list">
-              <span class="new__list__elem new__list__elem_border">Alert LaserScan Signature Cloud</span>
-              <span class="new__list__elem">Sonar LaserScan Signature Cloud</span>
-            </div>
-          </div>
-          <div class="form__item new__IMEI">
-            <input id="IMEI" type="text" class="input new__input window__input" placeholder="IMEI нового устройства/">
-            <label for="IMEI">?</label>
-          </div>
-          <button class="button button_primary new__button window__button form__button">Добавить</button>
-        </form>
+    <div class="donate window">
+      <h3 class="window__head donate__head">Количество подключаемых устройств ограничено.</h3>
+      <p class="window__text donate__text">Пожалуйста, оформите подписку, чтобы увеличить количество подключаемых устройст</p>
+      <div class="donate__block row">
+        <button id="click" class="button button_primary donate__button window__button">Оформить подписку</button>
+        <button id="back-to-page" class="button button_primary donate__button window__button">Нет</button>
       </div>
     </div>
 </body>

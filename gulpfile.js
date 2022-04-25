@@ -19,52 +19,80 @@ function javaScript() {
     const bundleStreamEnter = browserify('./src/enter.js').bundle()
     const bundleStreamReg = browserify('./src/reg.js').bundle()
     const bundleStreamTrack = browserify('./src/tracking.js').bundle()
+    const bundleStreamTrackZoom = browserify('./src/trackingZoom.js').bundle()
     const bundleStreamTrackWith = browserify('./src/trackingWith.js').bundle()
     const bundleStreamTrackWithOpen = browserify('./src/trackingWithOpen.js').bundle()
     const bundleStreamTrackWithOpenMobile = browserify('./src/trackingWithOpenMobile.js').bundle()
     const bundleStreamTrackDemo = browserify('./src/trackingDemo.js').bundle()
+    const bundleStreamTrackDemoOpen = browserify('./src/trackingDemoOpen.js').bundle()
+    const bundleStreamTrackDemoOpenMobile = browserify('./src/trackingDemoOpenMobile.js').bundle()
+    const bundleStreamTrackDemoZoom = browserify('./src/trackingDemoZoom.js').bundle()
 
    
     bundleStreamEnter
-      .pipe(source('enter.js'))
-      .pipe(streamify(uglify()))
-      .pipe(rename('bundleEnter.js'))
-      .pipe(dest('./dist/'))
-      .pipe(browserSync.stream());
+        .pipe(source('enter.js'))
+        .pipe(streamify(uglify()))
+        .pipe(rename('bundleEnter.js'))
+        .pipe(dest('./dist/'))
+        .pipe(browserSync.stream());
     bundleStreamReg
-      .pipe(source('reg.js'))
-      .pipe(streamify(uglify()))
-      .pipe(rename('bundleReg.js'))
-      .pipe(dest('./dist/'))
-      .pipe(browserSync.stream());
+        .pipe(source('reg.js'))
+        .pipe(streamify(uglify()))
+        .pipe(rename('bundleReg.js'))
+        .pipe(dest('./dist/'))
+        .pipe(browserSync.stream());
     bundleStreamTrack
-      .pipe(source('tracking.js'))
-      .pipe(streamify(uglify()))
-      .pipe(rename('bundleTrack.js'))
-      .pipe(dest('./dist/'))
-      .pipe(browserSync.stream());
+        .pipe(source('tracking.js'))
+        .pipe(streamify(uglify()))
+        .pipe(rename('bundleTrack.js'))
+        .pipe(dest('./dist/'))
+        .pipe(browserSync.stream());
+    bundleStreamTrackZoom
+        .pipe(source('trackingZoom.js'))
+        .pipe(streamify(uglify()))
+        .pipe(rename('bundleTrackZoom.js'))
+        .pipe(dest('./dist/'))
+        .pipe(browserSync.stream());
     bundleStreamTrackWith
-      .pipe(source('trackingWith.js'))
-      .pipe(streamify(uglify()))
-      .pipe(rename('bundleTrackWith.js'))
-      .pipe(dest('./dist/'))
-      .pipe(browserSync.stream());
-      bundleStreamTrackWithOpen
+        .pipe(source('trackingWith.js'))
+        .pipe(streamify(uglify()))
+        .pipe(rename('bundleTrackWith.js'))
+        .pipe(dest('./dist/'))
+        .pipe(browserSync.stream());
+    bundleStreamTrackWithOpen
         .pipe(source('trackingWithOpen.js'))
         .pipe(streamify(uglify()))
         .pipe(rename('bundleTrackWithOpen.js'))
         .pipe(dest('./dist/'))
         .pipe(browserSync.stream());
-        bundleStreamTrackWithOpenMobile
-          .pipe(source('trackingWithOpenMobile.js'))
-          .pipe(streamify(uglify()))
-          .pipe(rename('bundleTrackWithOpenMobile.js'))
-          .pipe(dest('./dist/'))
-          .pipe(browserSync.stream());
-      bundleStreamTrackDemo
+    bundleStreamTrackWithOpenMobile
+        .pipe(source('trackingWithOpenMobile.js'))
+        .pipe(streamify(uglify()))
+        .pipe(rename('bundleTrackWithOpenMobile.js'))
+        .pipe(dest('./dist/'))
+        .pipe(browserSync.stream());
+    bundleStreamTrackDemo
         .pipe(source('trackingDemo.js'))
         .pipe(streamify(uglify()))
         .pipe(rename('bundleTrackDemo.js'))
+        .pipe(dest('./dist/'))
+        .pipe(browserSync.stream());
+    bundleStreamTrackDemoZoom
+        .pipe(source('trackingDemoZoom.js'))
+        .pipe(streamify(uglify()))
+        .pipe(rename('bundleTrackDemoZoom.js'))
+        .pipe(dest('./dist/'))
+        .pipe(browserSync.stream());
+    bundleStreamTrackDemoOpen
+        .pipe(source('trackingDemoOpen.js'))
+        .pipe(streamify(uglify()))
+        .pipe(rename('bundleTrackDemoOpen.js'))
+        .pipe(dest('./dist/'))
+        .pipe(browserSync.stream());
+    bundleStreamTrackDemoOpenMobile
+        .pipe(source('trackingDemoOpenMobile.js'))
+        .pipe(streamify(uglify()))
+        .pipe(rename('bundleTrackDemoOpenMobile.js'))
         .pipe(dest('./dist/'))
         .pipe(browserSync.stream());
 }

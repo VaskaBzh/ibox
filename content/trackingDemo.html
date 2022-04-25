@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="../css/style.css">
     <script type='text/javascript' src='https://www.bing.com/api/maps/mapcontrol?callback=GetMap' async defer></script>
     <script src="../src/modules/mapInit.js" defer></script>
-    <script src="../dist/bundleTrackWith.js" type="text/javascript" defer></script>
+    <script src="../dist/bundleTrackDemo.js" type="text/javascript" defer></script>
     <title>IBox</title>
 </head>
 <body>
@@ -16,11 +16,12 @@
       <div id='mapDiv'></div>
       <br style="clear: left;"/>
 
-      <a id="go-to-first" href="trackingZoom.html"></a>
-      <a id="back-to-tracking" href="tracking.html"></a>
-      <a id="open-element" href="trackingWithOpen.html"></a>
+      <a id="go-to-first" href="trackingZoomFirst.html"></a>
+      <a id="go-to-second" href="trackingZoomSecond.html"></a>
+      <a id="back-to-tracking" href="trackingWith.html"></a>
+      <a id="donate-new" href="donate.html"></a>
+      <a id="open-element" href="trackingDemoOpenFirst.html"></a>
       <a id="open-element-second" href="trackingDemoOpenSecond.html"></a>
-      <a id="get-element" href="trackingDemo.html"></a>
       <a id="back-to-entrance" href="entrance.html"></a>
 
       <div class="modal modal_with">
@@ -47,15 +48,37 @@
             </div>
             <button id="last" class="button button_primary modal__new__button">Последнее местоположение автомобиля</button>
             <button id="calendar" class="button button_primary modal__new__button">Запрос поездок</button>
-          <span class="modal__delete">Удалить устройство</span>
-          <button id="new" class="button button_secondary modal__button"><img src="../img/plus.svg" alt="plus"> Добавить устройство</button>
+          <span class="modal__delete">Удалить устройство</span><div class="row modal__new__block">
         </div>
+      </div>
+        <div class="modal__new">
+
+          <!-- <div class="modal__new_border"></div> -->
+
+          <div class="row modal__new__block">
+            <div class="modal__new__head">
+              <div class="modal__new__head_block">
+                <input type="text" class="modal__new__title" value="Alert  LaserScan Signature Cloud">
+                <span id="change" class="modal__new__title_using modal__new__title_change"><img src="../img/change.svg" alt="change"></span>
+                <span id="acsess" class="modal__new__title_using modal__new__title_acsess"><img src="../img/tick.svg" alt="acsess"></span>
+                <span id="cross-little" class="modal__new__title_using modal__new__title_close"><img src="../img/cross-little.svg" alt="close"></span>
+              </div>
+              <span class="modal__new__heading">IMEI 13221321232133</span>
+            </div>
+            <img src="../img/new-image2.svg" alt="">
+          </div>
+          <button id="last" class="button button_primary modal__new__button">Последнее местоположение автомобиля</button>
+          <button id="calendar" class="button button_primary modal__new__button">Запрос поездок</button>
+        <span class="modal__delete">Удалить устройство</span><div class="row modal__new__block">
+      </div>
+      <button id="new" class="button button_secondary modal__button"><img src="../img/plus.svg" alt="plus"> Добавить устройство</button>
         <div class="modal__sure">
           <button id="sure" class="button button_secondary modal__button">Выйти из личного кабинета</button>
         </div>
       </div>
     </div>
-      
+  </div>
+
       <div class="tracking__button"><img src="../img/white-arrow.svg" alt="toggle-arrow" style="transform: rotate(180deg);"></div>
     </section>
 
@@ -131,6 +154,7 @@
       </table>
       <button class="button button_primary window__button calendar__button">Применить</button>
     </div>
+
     <div class="sure window">
       <span class="sure__question window__head">Вы уверены, что хотите покинуть личный кабинет?</span>
       <div class="sure__buttons">
@@ -148,31 +172,13 @@
       </div>
     </div>
 
-    <div class="shadow">
-      <div class="new window">
-        <img src="../img/cross.svg" alt="close" class="window__cross new__cross">
-        <span class="new__question window__head">Добавить устройство</span>
-        <form action="#" class="form window__form new__form">
-          <div class="form__item new__chose">
-            <input id="list" type="text" class="input new__input window__input new__input_chose" placeholder="Выберите Ваше устройство">
-            <label for="list" style="transform: rotate(0deg);"><img src="../img/grey-arrow.svg" alt="open/close"></label>
-            <div class="new__list">
-              <span class="new__list__elem new__list__elem_border">Alert LaserScan Signature Cloud</span>
-              <span class="new__list__elem">Sonar LaserScan Signature Cloud</span>
-            </div>
-          </div>
-          <div class="form__item new__IMEI">
-            <input id="IMEI" type="text" class="input new__input window__input" placeholder="IMEI нового устройства/">
-            <label for="IMEI">?</label>
-          </div>
-          <button class="button button_primary new__button window__button form__button">Добавить</button>
-        </form>
+    <div class="donate window">
+      <h3 class="window__head donate__head">Количество подключаемых устройств ограничено.</h3>
+      <p class="window__text donate__text">Пожалуйста, оформите подписку, чтобы увеличить количество подключаемых устройст</p>
+      <div class="donate__block row">
+        <button id="click" class="button button_primary donate__button window__button">Оформить подписку</button>
+        <button id="back-to-page" class="button button_primary donate__button window__button">Нет</button>
       </div>
-    </div>
-
-    <div class="new_ready window">
-      <h3 class="window__head new_ready__title">Новое устройство добавлено</h3>
-      <button class="button button_primary window__button new_ready__button">ОК</button>
     </div>
 </body>
 </html>
