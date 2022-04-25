@@ -1,4 +1,5 @@
 const modalToggle = require('./modules/modalToggle')
+const newModalToggle = require('./modules/newModalToggle')
 const sureModalToggle = require('./modules/sureModalToggle')
 const date = require('./modules/date')
 const title = require('./modules/title')
@@ -7,6 +8,7 @@ const zoom = require('./modules/zoom')
 const back = require('./modules/backZoom')
 
 modalToggle()
+newModalToggle()
 sureModalToggle()
 date()
 title()

@@ -14,12 +14,10 @@ const newModal = () => {
 
     buttonOpen.addEventListener('click', modalToggle)
     buttonClose.addEventListener('click', modalToggle)
-    buttonSubmit.addEventListener('click', (e) => {
+    buttonSubmit.addEventListener('click', () => {
         if (newInput.value != '') {
             getted.classList.toggle('active')
             gettedButton.addEventListener('click', () => {link.click()})
-        } else {
-            e.preventDefault
         }
     })
 }

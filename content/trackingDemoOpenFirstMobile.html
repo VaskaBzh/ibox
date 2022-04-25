@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="../css/style.css">
     <script type='text/javascript' src='https://www.bing.com/api/maps/mapcontrol?callback=GetMap' async defer></script>
     <script src="../src/modules/mapInitDemoOpenFirstMobile.js" defer></script>
+    <script src="../dist/calendar.min.js" type="text/javascript" defer></script>
     <script src="../dist/bundleTrackDemoOpenMobile.js" type="text/javascript" defer></script>
     <title>IBox</title>
 </head>
@@ -30,7 +31,7 @@
             <input id="date" type='text' class="input modal__input input_date" placeholder="22.02.2022">
             <label class="input_date_img" for="date"><img src="../img/calendar.svg" alt="calendar"></label>
           </div>
-          <div class="modal__new">
+          <div class="modal__new modal__new_first">
 
             <div class="modal__new_border"></div>
 
@@ -47,7 +48,7 @@
               <img src="../img/new-image.svg" alt="">
             </div>
             <button id="last" class="button button_primary modal__new__button">Последнее местоположение автомобиля</button>
-            <button id="calendar" style="display: none" class="button button_primary modal__new__button">Запрос поездок</button>
+            <button id="calendarDate" style="display: none" class="button button_primary modal__new__button">Запрос поездок</button>
 
             <div class="modal__info">
               <div class="modal__info__head row">
@@ -75,11 +76,8 @@
               </div>
               <div class="modal__info__block modal__info__block_low modal__info__block_range row">
                 <div class="modal__info__block_group modal__info__block_item">
-                  <div class="modal__info__range">
-                    <div class="modal__info__range_progress"></div>
-                    <div class="modal__info__range_line"></div>
-                  </div>
-                  <span class="modal__info__block_time">00:00:00/01:20:26</span>
+                  <input id="range" type="range" min="0" max="4826" value="0" step="60" class="modal__info__range">
+                  <span class="modal__info__block_time"><span>00:00:00</span>/01:20:26</span>
                 </div>
               <span class="modal__info__block__select modal__info__block__select_margin">x1<img src="../img/dark-arrow.svg" alt="arrow"></span>
                 <div class="modal__info__block__list">
@@ -125,7 +123,7 @@
             <img src="../img/new-image2.svg" alt="">
           </div>
           <button id="last" class="button button_primary modal__new__button">Последнее местоположение автомобиля</button>
-          <button id="calendar" class="button button_primary modal__new__button">Запрос поездок</button>
+          <button id="calendarDate" class="button button_primary modal__new__button">Запрос поездок</button>
         <span class="modal__delete">Удалить устройство</span><div class="row modal__new__block">
       </div>
       <button style="display: none;" id="new" class="button button_secondary modal__button"><img src="../img/plus.svg" alt="plus"> Добавить устройство</button>
@@ -136,79 +134,11 @@
     </div>
   </div>
 
-      <div class="tracking__button"><img src="../img/white-arrow.svg" alt="toggle-arrow" style="transform: rotate(180deg);"></div>
+      <div class="tracking__button"><img src="../img/white-arrow.svg" alt="toggle-arrow" style="transform: rotate(0deg);"></div>
     </section>
 
-    <div class="calendar window">
-      <div class="calendar__block">
-        <span class="calendar__link calendar__link_yesterday">Вчера</span>
-        <span class="calendar__link calendar__link_today">Сегодня</span>
-      </div>
+    <div id="calendar" class="calendar window">
       <img src="../img/cross.svg" alt="close" class="window__cross calendar__cross">
-      <div class="calendar__nav">
-        <div class="calendar__nav__button calendar__nav__button_prev"><img src="../img/dark-prev.svg" alt=""></div>
-        <div class="calendar__value">
-          <span class="calendar__value__elem calendar__value__elem_mounth">Февраль </span>
-          <span class="calendar__value__elem calendar__value__elem_year"> 2022</span>
-        </div>
-        <div class="calendar__nav__button calendar__nav__button_next"><img src="../img/dark-next.svg" alt=""></div>
-      </div>
-      <table class="table">
-        <tr class="table__row table__row_head">
-          <th class="table__head">Пн</th>
-          <th class="table__head">Вт</th>
-          <th class="table__head">Ср</th>
-          <th class="table__head">Чт</th>
-          <th class="table__head">Пт</th>
-          <th class="table__head">Сб</th>
-          <th class="table__head">Вс</th>
-        </tr>
-        <tr class="table__row">
-          <td class="table__elem table__elem_none table__elem_prev">31</td>
-          <td class="table__elem">1</td>
-          <td class="table__elem">2</td>
-          <td class="table__elem">3</td>
-          <td class="table__elem">4</td>
-          <td class="table__elem">5</td>
-          <td class="table__elem">6</td>
-        </tr>
-        <tr class="table__row">
-          <td class="table__elem">7</td>
-          <td class="table__elem">8</td>
-          <td class="table__elem">9</td>
-          <td class="table__elem">10</td>
-          <td class="table__elem">11</td>
-          <td class="table__elem">12</td>
-          <td class="table__elem">13</td>
-        </tr>
-        <tr class="table__row">
-          <td class="table__elem">14</td>
-          <td class="table__elem">15</td>
-          <td class="table__elem">16</td>
-          <td class="table__elem">17</td>
-          <td class="table__elem">18</td>
-          <td class="table__elem">19</td>
-          <td class="table__elem">20</td>
-        </tr>
-        <tr class="table__row">
-          <td class="table__elem">21</td>
-          <td class="table__elem table__elem_today">22</td>
-          <td class="table__elem">23</td>
-          <td class="table__elem">24</td>
-          <td class="table__elem">25</td>
-          <td class="table__elem">26</td>
-          <td class="table__elem">27</td>
-        </tr>
-        <tr class="table__row">
-          <td class="table__elem">28</td>
-          <td class="table__elem table__elem_none table__elem_next">1</td>
-          <td class="table__elem table__elem_none table__elem_next">2</td>
-          <td class="table__elem table__elem_none table__elem_next">3</td>
-          <td class="table__elem table__elem_none table__elem_next">4</td>
-          <td class="table__elem table__elem_none table__elem_next">5</td>
-          <td class="table__elem table__elem_none table__elem_next">6</td>
-        </tr>
-      </table>
       <button class="button button_primary window__button calendar__button">Применить</button>
     </div>
 
