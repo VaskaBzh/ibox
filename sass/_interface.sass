@@ -11,10 +11,18 @@
         color: $light
     &_primary
         background: $link
+        opacity: 1
+        transition-duration: 400ms
+        &:hover
+            opacity: 0.9
     &_secondary 
         background: transparent
         padding: 15px 0
         border: 1px solid $light
+        transition-duration: 400ms
+        &:hover
+            background: $link
+            border: 1px solid $link
 .form
     width: 100%
     &__item

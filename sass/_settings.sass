@@ -34,6 +34,11 @@ a
         border-bottom: 1px dashed $link
         color: $link
         cursor: pointer
+        transition: border 400ms
+        min-height: 25px
+        &:hover
+            border-bottom: none
+            padding-bottom: 7px!important
     &__block
         min-height: 572px
         width: 100%
@@ -107,6 +112,8 @@ a
         border: 1px solid $link
         max-width: 380px
         padding: 16px 0
+        &:hover
+            color: $light
         img
             margin-bottom: -7px
             width: 22px
@@ -320,14 +327,28 @@ a
         &__play
             margin-left: 14px
             max-width: 25px
+        &__pause 
+            min-height: 36px
+            width: 32px
+            display: flex
+            align-items: center
+            justify-content: center
+        &__stop
+            min-height: 36px
+            width: 32px
+            display: flex
+            align-items: center
+            justify-content: center
         &__eye
             margin-left: 2px
             max-width: 26px
             min-height: 29px
             margin-bottom: -10px
+            width: 100%
         &__bin
             max-width: 14px
             min-height: 19px
+            cursor: pointer
             &_eye
                 margin-bottom: 10px
         &__speed
@@ -427,6 +448,7 @@ a
         background: transparent url(../img/dark-prev.svg) no-repeat center
         border: 1px solid $link
         outline: none
+        cursor: pointer
     &-next-button
         max-width: 31px
         min-height: 31px
@@ -435,6 +457,7 @@ a
         background: transparent url(../img/dark-next.svg) no-repeat center            
         border: 1px solid $link
         outline: none
+        cursor: pointer
     &-button-group
         width: 100%
         position: absolute
@@ -442,7 +465,8 @@ a
         display: flex
         justify-content: space-between
         align-items: center
-        minh: 31px
+        min-height: 31px
+        cursor: pointer
     &-today-button
         padding: 7px 15px 8px
         background: $lightGrey
@@ -451,6 +475,7 @@ a
         order: 1
         border: none
         outline: none
+        cursor: pointer
     &-view-harness
         width: 100%
         min-height: 246px
@@ -647,3 +672,9 @@ a
     &__row
         margin-bottom: 21px
         width: 100%
+#change
+    cursor: pointer
+#acsess
+    cursor: pointer
+#cross-little 
+    cursor: pointer

@@ -374,11 +374,21 @@ template {
 }
 .button_primary {
   background: #727883;
+  opacity: 1;
+  transition-duration: 400ms;
+}
+.button_primary:hover {
+  opacity: 0.9;
 }
 .button_secondary {
   background: transparent;
   padding: 15px 0;
   border: 1px solid #fff;
+  transition-duration: 400ms;
+}
+.button_secondary:hover {
+  background: #727883;
+  border: 1px solid #727883;
 }
 
 .form {
@@ -604,6 +614,12 @@ a {
   border-bottom: 1px dashed #727883;
   color: #727883;
   cursor: pointer;
+  transition: border 400ms;
+  min-height: 25px;
+}
+.section__link:hover {
+  border-bottom: none;
+  padding-bottom: 7px !important;
 }
 .section__block {
   min-height: 572px;
@@ -695,6 +711,9 @@ a {
   border: 1px solid #727883;
   max-width: 380px;
   padding: 16px 0;
+}
+.modal__button:hover {
+  color: #fff;
 }
 .modal__button img {
   margin-bottom: -7px;
@@ -956,15 +975,31 @@ a {
   margin-left: 14px;
   max-width: 25px;
 }
+.modal__info__pause {
+  min-height: 36px;
+  width: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.modal__info__stop {
+  min-height: 36px;
+  width: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 .modal__info__eye {
   margin-left: 2px;
   max-width: 26px;
   min-height: 29px;
   margin-bottom: -10px;
+  width: 100%;
 }
 .modal__info__bin {
   max-width: 14px;
   min-height: 19px;
+  cursor: pointer;
 }
 .modal__info__bin_eye {
   margin-bottom: 10px;
@@ -1080,6 +1115,7 @@ a {
   background: transparent url(../img/dark-prev.svg) no-repeat center;
   border: 1px solid #727883;
   outline: none;
+  cursor: pointer;
 }
 .fc-next-button {
   max-width: 31px;
@@ -1089,6 +1125,7 @@ a {
   background: transparent url(../img/dark-next.svg) no-repeat center;
   border: 1px solid #727883;
   outline: none;
+  cursor: pointer;
 }
 .fc-button-group {
   width: 100%;
@@ -1097,7 +1134,8 @@ a {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  minh: 31px;
+  min-height: 31px;
+  cursor: pointer;
 }
 .fc-today-button {
   padding: 7px 15px 8px;
@@ -1107,6 +1145,7 @@ a {
   order: 1;
   border: none;
   outline: none;
+  cursor: pointer;
 }
 .fc-view-harness {
   width: 100%;
@@ -1351,6 +1390,18 @@ a {
   width: 100%;
 }
 
+#change {
+  cursor: pointer;
+}
+
+#acsess {
+  cursor: pointer;
+}
+
+#cross-little {
+  cursor: pointer;
+}
+
 .entrance {
   height: 100vh;
   padding-bottom: 101px;
@@ -1370,15 +1421,27 @@ a {
 }
 .entrance .entry__link_reg {
   margin-bottom: 26px;
+  transition: border 400ms;
+}
+.entrance .entry__link_reg:hover {
+  border-bottom: none;
 }
 .entrance .entry__link_agree {
   margin-top: 30px;
   max-width: 264px;
   width: 100%;
+  transition: border 400ms;
+}
+.entrance .entry__link_agree:hover {
+  border-bottom: none;
 }
 .entrance .entry__link_password {
   color: #C4C4C4;
   border-bottom: 1px dashed #C4C4C4;
+  transition: border 400ms;
+}
+.entrance .entry__link_password:hover {
+  border-bottom: none;
 }
 .entrance .entry__links {
   margin: 15px 0 33px 2px;
@@ -1590,6 +1653,20 @@ a {
   overflow: visible;
   display: flex;
   padding: 50px 33px 42px;
+}
+.new__question {
+  margin-bottom: 50px;
+}
+.new__side {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 60px;
+  max-width: 100%;
+  width: 100%;
+  color: #727883;
+  border: 1px solid #C4C4C4;
+  border-radius: 8px;
 }
 .new__input_chose {
   z-index: 23;

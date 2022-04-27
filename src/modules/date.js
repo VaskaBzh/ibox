@@ -19,11 +19,39 @@ const date = () => {
     calendarInput.setAttribute('autocomplete', 'off')
 
     let todayValue = document.querySelectorAll('.fc-daygrid-day-number')
+    let todayContains = document.querySelectorAll('.fc-day')
     const todayValueBorder = document.querySelectorAll('.fc-daygrid-day-top')
     const buttonCalendar = document.querySelector('.fc-today-button')
+    const mounthValue = document.querySelector('.fc-toolbar-title')
 
     buttonCalendar.textContent = 'Сегодня'
     buttonCalendar.style.color = '#727883'
+    buttonCalendar.removeAttribute('disabled')
+    buttonCalendar.setAttribute('title', 'Сегодня')
+
+    const reInitDates = () => {
+      todayValue = document.querySelectorAll('.fc-daygrid-day-number')
+        modal = document.getElementById('calendar')
+        next = document.querySelector('.fc-next-button')
+        prev = document.querySelector('.fc-prev-button')
+        todayValue.forEach((day) => {
+          day.addEventListener('click', () => {
+            buttonCalendar.textContent = 'Сегодня'
+            buttonCalendar.style.color = '#727883'
+            buttonCalendar.disabled = 'false'
+            buttonCalendar.setAttribute('title', 'Сегодня')
+            day.addEventListener('click', () => {
+              modal.classList.remove('active')
+              modal.classList.remove('active_calendar')
+              calendarInput.value = day.textContent + ' ' + mounthValue.textContent
+            })
+          })
+        })
+        buttonCalendar.textContent = 'Сегодня'
+        buttonCalendar.style.color = '#727883'
+        buttonCalendar.removeAttribute('disabled')
+        buttonCalendar.setAttribute('title', 'Сегодня')
+    }
 
     let next = document.querySelector('.fc-next-button')
     let prev = document.querySelector('.fc-prev-button')
@@ -33,49 +61,21 @@ const date = () => {
         modal.classList.remove('active_calendar')
         calendarInput.value = day.textContent + ' ' + document.querySelector('.fc-toolbar-title').textContent
       })
-      if (day.textContent == output) {
+      // bug выделяется две даты, с нужным textContent
+
+      if (day.textContent == output && !todayContains[i].classList.contains('fc-day-other')) {
         todayValueBorder[i].style.backgroundColor = '#727883'
         day.style.color = '#fff'
       }
-      next.addEventListener('click', () => {
-        todayValue = document.querySelectorAll('.fc-daygrid-day-number')
-        modal = document.getElementById('calendar')
-        next = document.querySelector('.fc-next-button')
-        prev = document.querySelector('.fc-prev-button')
-        todayValue.forEach((day) => {
-          day.addEventListener('click', () => {
-            buttonCalendar.textContent = 'Сегодня'
-            buttonCalendar.style.color = '#727883'
-            day.addEventListener('click', () => {
-              modal.classList.remove('active')
-              modal.classList.remove('active_calendar')
-              calendarInput.value = day.textContent + ' ' + document.querySelector('.fc-toolbar-title').textContent
-            })
-          })
-        })
+      buttonCalendar.addEventListener('click', () => {
+        modal.classList.remove('active')
+        modal.classList.remove('active_calendar')
+        calendarInput.value = output + ' ' + mounthValue.textContent
         buttonCalendar.textContent = 'Сегодня'
-        buttonCalendar.style.color = '#727883'
       })
-      prev.addEventListener('click', () => {
-        todayValue = document.querySelectorAll('.fc-daygrid-day-number')
-        modal = document.getElementById('calendar')
-        next = document.querySelector('.fc-next-button')
-        prev = document.querySelector('.fc-prev-button')
-        todayValue.forEach((day) => {
-          day.addEventListener('click', () => {
-            buttonCalendar.textContent = 'Сегодня'
-            buttonCalendar.style.color = '#727883'
-            day.addEventListener('click', () => {
-              modal.classList.toggle('active')
-              modal.classList.toggle('active_calendar')
-              calendarInput.value = day.textContent + ' ' + document.querySelector('.fc-toolbar-title').textContent
-            })
-          })
-        })
-      buttonCalendar.textContent = 'Сегодня'
-      buttonCalendar.style.color = '#727883'
+      next.addEventListener('click', reInitDates)
+      prev.addEventListener('click', reInitDates)
     })
-  })
 
     const modalToggle = () => {
         modal.classList.toggle('active')
