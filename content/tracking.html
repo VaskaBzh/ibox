@@ -44,16 +44,18 @@
       <span class="new__question window__head">Добавить устройство</span>
       <form action="#" class="form window__form new__form">
         <div class="form__item new__chose">
-          <input id="list" type="text" class="input new__input window__input new__input_chose" placeholder="Выберите Ваше устройство">
+          <input id="list" type="text" class="input new__input window__input new__input_chose" autocomplete="off" placeholder="Выберите Ваше устройство">
           <label for="list" style="transform: rotate(0deg);"><img src="../img/grey-arrow.svg" alt="open/close"></label>
           <div class="new__list">
             <span class="new__list__elem new__list__elem_border">Alert LaserScan Signature Cloud</span>
             <span class="new__list__elem">Sonar LaserScan Signature Cloud</span>
+            <span class="new__list__elem">iBOX Jet LaserVision WiFi Signature Cloud</span>
           </div>
         </div>
         <div class="form__item new__IMEI">
           <input id="IMEI" type="text" class="input new__input window__input" placeholder="IMEI нового устройства/">
           <label for="IMEI">?</label>
+          <div class="new__side"></div>
         </div>
         <button class="button button_primary new__button window__button form__button">Добавить</button>
       </form>

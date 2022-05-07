@@ -8,16 +8,25 @@ const newModal = () => {
     const getted = document.querySelector('.new_ready')
     const gettedButton = document.querySelector('.new_ready__button')
 
-    let formInner = document.querySelector('.new__IMEI')
+    let formInner = document.querySelector('.new__side')
     let buttonInner = document.querySelector('.new__IMEI label')
+    
+    newInput.setAttribute('autocomplete', 'off')
 
-    buttonInner.addEventListener('click', () => {
-        formInner.innerHTML = '<input id="IMEI" type="text" class="input new__input window__input" placeholder="IMEI нового устройства/"><label for="IMEI">?</label><div class="new__side">Подсказка</div>'
-
-        formInner = document.querySelector('.new__IMEI')
-        buttonInner = document.querySelector('.new__IMEI label')
-        buttonInner.style.top = 13 + '%'
-    })
+    
+        buttonInner.addEventListener('click', () => {
+            if (buttonInner.getAttribute('style') == 'top: 6%;') {
+                formInner.style.display = 'none'
+                formInner.textContent = ''
+                buttonInner.style.top = 23 + '%'
+            } else {
+                formInner.style.display = 'flex'
+                formInner.textContent = 'Данные о IMEI вы можете найти в меню вашего устройства при подключенном кабеле Cloud и вставленной SIM-карте. Нажмите кнопку М на устройстве, спуститесь по меню до пункта IMEI и нажмите на кнопку OK. Открывшийся ряд чисел необходимо ввести в поле, не нарушая последовательности'
+                buttonInner.style.top = 6 + '%'
+            }
+        })
+    
+        
 
     const modalToggle = () => {
         modal.classList.toggle('active')
@@ -25,7 +34,8 @@ const newModal = () => {
 
     buttonOpen.addEventListener('click', modalToggle)
     buttonClose.addEventListener('click', modalToggle)
-    buttonSubmit.addEventListener('click', () => {
+    buttonSubmit.addEventListener('click', (e) => {
+        e.preventDefault()
         if (newInput.value != '') {
             getted.classList.toggle('active')
             gettedButton.addEventListener('click', () => {link.click()})

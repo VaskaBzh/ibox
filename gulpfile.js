@@ -95,6 +95,8 @@ function javaScript() {
         .pipe(rename('bundleTrackDemoOpenMobile.js'))
         .pipe(dest('./dist/'))
         .pipe(browserSync.stream());
+    src(['js/**.js', '!js/**.min.js'])
+        .pipe(dest('dist/js/'));
 }
 
 // Static server
@@ -134,11 +136,11 @@ function buildCSS(done) {
 }
 
 // function buildJS(done) {
-//     src(['js/**.js', '!js/**.min.js'])
-//         .pipe(minifyjs())
-//         .pipe(dest('dist/js/'));
-//     src('js/**.min.js').pipe(dest('dist/js/'));
-//     done();
+    // src(['js/**.js', '!js/**.min.js'])
+    //     .pipe(minifyjs())
+    //     .pipe(dest('dist/js/'));
+    // src('js/**.min.js').pipe(dest('dist/js/'));
+    // done();
 // }
 
 function html(done) {

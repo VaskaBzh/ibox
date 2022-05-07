@@ -19,7 +19,7 @@ const date = () => {
     calendarInput.setAttribute('autocomplete', 'off')
 
     let todayValue = document.querySelectorAll('.fc-daygrid-day-number')
-    let todayContains = document.querySelectorAll('.fc-day')
+    let todayContains = document.querySelectorAll('.fc-daygrid-day')
     const todayValueBorder = document.querySelectorAll('.fc-daygrid-day-top')
     const buttonCalendar = document.querySelector('.fc-today-button')
     const mounthValue = document.querySelector('.fc-toolbar-title')
@@ -55,6 +55,7 @@ const date = () => {
 
     let next = document.querySelector('.fc-next-button')
     let prev = document.querySelector('.fc-prev-button')
+
     todayValue.forEach((day, i) => {
       day.addEventListener('click', () => {
         modal.classList.remove('active')
@@ -62,11 +63,14 @@ const date = () => {
         calendarInput.value = day.textContent + ' ' + document.querySelector('.fc-toolbar-title').textContent
       })
       // bug выделяется две даты, с нужным textContent
-
-      if (day.textContent == output && !todayContains[i].classList.contains('fc-day-other')) {
+      if (day.textContent == output && !todayContains[i].classList.contains('fc-day-other') && day.textContent > 10) {
+        todayValueBorder[i].style.backgroundColor = '#727883'
+        day.style.color = '#fff'
+      } else if (day.textContent == String(output).slice(1) && !todayContains[i].classList.contains('fc-day-other') && day.textContent < 10) {
         todayValueBorder[i].style.backgroundColor = '#727883'
         day.style.color = '#fff'
       }
+      
       buttonCalendar.addEventListener('click', () => {
         modal.classList.remove('active')
         modal.classList.remove('active_calendar')

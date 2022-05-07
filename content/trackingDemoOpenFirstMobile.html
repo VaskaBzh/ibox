@@ -167,5 +167,13 @@
         <button id="back-to-page" class="button button_primary donate__button window__button">Нет</button>
       </div>
     </div>
+    
+    <script>
+      function copy() {
+          const copyText = document.querySelector('.infobox .infobox__text')
+          copyText.select();
+          document.execCommand("copy")
+      }
+    </script>
 </body>
 </html>
